@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c7r0nol53i5qf"
+path="res://.godot/imported/Hollow In The High-Rise.mp3-c03615c75a158b6a702e2867050b8f8a.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/Hollow In The High-Rise.mp3"
+dest_files=["res://.godot/imported/Hollow In The High-Rise.mp3-c03615c75a158b6a702e2867050b8f8a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ca7wt1x3mayfl"
+path="res://.godot/imported/Ready To Change (Mid-Tempo Sad).mp3-9a3c367829c904a6b5228564cd8b6179.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/Ready To Change (Mid-Tempo Sad).mp3"
+dest_files=["res://.godot/imported/Ready To Change (Mid-Tempo Sad).mp3-9a3c367829c904a6b5228564cd8b6179.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

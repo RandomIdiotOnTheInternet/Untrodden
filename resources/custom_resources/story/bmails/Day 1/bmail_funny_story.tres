@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="BmailData" format=3 uid="uid://dyqvev0s3rlh7"]
+
+[ext_resource type="Script" uid="uid://bhv7rst7eb3dk" path="res://scripts/UI/BmailData.gd" id="1_7ckop"]
+
+[resource]
+script = ExtResource("1_7ckop")
+metadata/_custom_type_script = "uid://bhv7rst7eb3dk"

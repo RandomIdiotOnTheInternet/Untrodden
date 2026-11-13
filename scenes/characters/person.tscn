@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bgv22ffbcyt48"]
+
+[ext_resource type="Script" uid="uid://cndabnj36ayr6" path="res://scripts/characters/person.gd" id="1_1tx58"]
+[ext_resource type="PackedScene" uid="uid://c78gk5j221fpw" path="res://scenes/tool/custom_audio.tscn" id="6_6klly"]
+[ext_resource type="PackedScene" uid="uid://c3fh7b5xpvt8b" path="res://scenes/tool/character_mesh.tscn" id="6_woqqa"]
+[ext_resource type="AudioStream" uid="uid://ceynurgto8a07" path="res://sounds/sfx/walking_sounds.tres" id="7_woqqa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rgnvv"]
+size = Vector3(0.26293945, 1.5594482, 0.21508789)
+
+[sub_resource type="Animation" id="Animation_52hat"]
+resource_name = "enter_door"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6klly"]
+_data = {
+&"enter_door": SubResource("Animation_52hat")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0d2px"]
+size = Vector3(0.27514648, 1, 0.6143799)
+
+[node name="Person" type="CharacterBody3D" unique_id=1566598975 groups=["person"]]
+collision_layer = 97
+script = ExtResource("1_1tx58")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=911819295]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0032958984, 0.7202759, 0.010131836)
+shape = SubResource("BoxShape3D_rgnvv")
+
+[node name="CharacterMesh" parent="." unique_id=777946477 instance=ExtResource("6_woqqa")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=413800991]
+libraries/ = SubResource("AnimationLibrary_6klly")
+
+[node name="Footsteps" parent="." unique_id=871528764 instance=ExtResource("6_6klly")]
+stream = ExtResource("7_woqqa")
+bus = &"Ambient"
+
+[node name="WalkngArea" type="Area3D" parent="." unique_id=459925035]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0040756464)
+collision_layer = 193
+collision_mask = 65
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WalkngArea" unique_id=1696905161]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015991211, 0.4528833, 0.43651795)
+shape = SubResource("BoxShape3D_0d2px")
+
+[connection signal="body_entered" from="WalkngArea" to="." method="_on_walkng_area_body_entered"]
+[connection signal="body_exited" from="WalkngArea" to="." method="_on_walkng_area_body_exited"]

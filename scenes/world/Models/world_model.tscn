@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://kldmc0086pko"]
+
+[ext_resource type="ArrayMesh" uid="uid://cp20myh668hwg" path="res://vox/House.vox" id="1_iicme"]
+[ext_resource type="ArrayMesh" uid="uid://crp6h274cv42v" path="res://vox/theWearyWorm.vox" id="2_w4xu1"]
+[ext_resource type="ArrayMesh" uid="uid://bun30f10h70py" path="res://vox/fattiesFoodPlace.vox" id="3_f31yx"]
+[ext_resource type="PackedScene" uid="uid://bbjymevbmimvw" path="res://scenes/furntiture/streetlight.tscn" id="4_w4xu1"]
+[ext_resource type="Sky" uid="uid://dkroo2pp7qom" path="res://ambientcg/environments/DaySkyHDRI063B_1K.tres" id="5_f31yx"]
+[ext_resource type="ArrayMesh" uid="uid://bns2wavfwcsw7" path="res://vox/furniture/stopSign.vox" id="6_34y7f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i4smv"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.30692267, 0.3069227, 0.3069227, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6f8in"]
+material = SubResource("StandardMaterial3D_i4smv")
+size = Vector3(30, 1, 10)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_34y7f"]
+points = PackedVector3Array(-15, -0.5, -5, -15, 0.5, -5, 14.999998, -0.5, -5, -15, -0.5, 5, -15, 0.5, 5, 14.999998, 0.5, -5, 14.999998, -0.5, 5, 14.999998, 0.5, 5)
+
+[sub_resource type="Environment" id="Environment_34y7f"]
+background_mode = 2
+sky = ExtResource("5_f31yx")
+glow_enabled = true
+glow_intensity = 2.0
+glow_bloom = 0.05
+fog_enabled = true
+fog_light_color = Color(0.3665763, 0.39809522, 0.4471323, 1)
+
+[node name="World Model" type="Node3D" unique_id=1278594051]
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=1368079115]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1424898345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3400652, 0)
+mesh = SubResource("BoxMesh_6f8in")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Ground" unique_id=879722417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3400652, 0)
+shape = SubResource("ConvexPolygonShape3D_34y7f")
+
+[node name="EldersHouse" type="MeshInstance3D" parent="Ground" unique_id=216263577]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -0.8400651, -1.9881446)
+mesh = ExtResource("1_iicme")
+
+[node name="TheWearyWorm" type="MeshInstance3D" parent="Ground" unique_id=1671547722]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.1917033, -0.84006524, -1.8671079)
+mesh = ExtResource("2_w4xu1")
+
+[node name="FattiesFoodPlace" type="MeshInstance3D" parent="Ground" unique_id=1596850396]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.1734228, -0.8400651, -1.8672775)
+mesh = ExtResource("3_f31yx")
+
+[node name="Streetlight" parent="." unique_id=146829065 instance=ExtResource("4_w4xu1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.0680705, 0.8438448, -0.4371484)
+flickering = true
+
+[node name="Streetlight2" parent="." unique_id=1547773564 instance=ExtResource("4_w4xu1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.2594482, 0.8438448, -0.4371484)
+
+[node name="Streetlight3" parent="." unique_id=2075656136 instance=ExtResource("4_w4xu1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.259448, 0.8438448, -0.4371484)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1195278937]
+environment = SubResource("Environment_34y7f")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=757269122]
+transform = Transform3D(0.8660254, -0.4829629, -0.12940954, 0, -0.25881907, 0.9659258, -0.5, -0.83651626, -0.22414389, 0, 4, 0)
+shadow_enabled = true
+shadow_blur = 0.2
+
+[node name="StopSign" type="MeshInstance3D" parent="." unique_id=1085039677]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 6.3459754, 0.5290205, -0.6290935)
+mesh = ExtResource("6_34y7f")

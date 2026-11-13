@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dj5glfnvrockh"
+path="res://.godot/imported/The Terrible Truth.mp3-cf8d3e002b6e5c6dd06092955dc9bde2.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/The Terrible Truth.mp3"
+dest_files=["res://.godot/imported/The Terrible Truth.mp3-cf8d3e002b6e5c6dd06092955dc9bde2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

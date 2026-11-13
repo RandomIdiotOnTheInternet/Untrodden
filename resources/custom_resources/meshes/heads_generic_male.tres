@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="BodyMeshLibrary" format=3 uid="uid://dnklquibf5l4u"]
+
+[ext_resource type="Script" uid="uid://bq78578v07lol" path="res://scripts/tool/body_mesh_library.gd" id="1_guxnp"]
+[ext_resource type="MeshLibrary" uid="uid://k4njph0p20oj" path="res://vox/people/heads/head_generic_female_1.vox" id="1_vx77e"]
+[ext_resource type="MeshLibrary" uid="uid://conv20dmj51xq" path="res://vox/people/heads/head_generic_female_2.vox" id="2_e8jwh"]
+[ext_resource type="MeshLibrary" uid="uid://4q511l56rlv" path="res://vox/people/heads/head_generic_female_3.vox" id="3_qa3gw"]
+[ext_resource type="MeshLibrary" uid="uid://dyycxgxghv7pj" path="res://vox/people/heads/head_generic_female_4.vox" id="4_cmx7g"]
+[ext_resource type="MeshLibrary" uid="uid://b5rmydkgi01xh" path="res://vox/people/heads/head_generic_female_5.vox" id="5_d1q8h"]
+[ext_resource type="MeshLibrary" uid="uid://bb60n411orl1c" path="res://vox/people/heads/head_generic_male_1.vox" id="6_wflic"]
+[ext_resource type="MeshLibrary" uid="uid://c238o0avdlxm6" path="res://vox/people/heads/head_generic_male_2.vox" id="7_7piyt"]
+[ext_resource type="MeshLibrary" uid="uid://cw6vir1ehxucg" path="res://vox/people/heads/head_generic_male_4.vox" id="8_r76kc"]
+[ext_resource type="MeshLibrary" uid="uid://dco66eboc0hd5" path="res://vox/people/heads/head_generic_male_5.vox" id="9_05br5"]
+[ext_resource type="MeshLibrary" uid="uid://bque8e43l3uwv" path="res://vox/people/heads/head_generic_male_6.vox" id="10_nfvh6"]
+[ext_resource type="MeshLibrary" uid="uid://cod8hdqpohn4h" path="res://vox/people/heads/head_generic_male_7.vox" id="11_2ehom"]
+[ext_resource type="MeshLibrary" uid="uid://cdbiy61vmk448" path="res://vox/people/heads/head_generic_male_8.vox" id="12_3gyam"]
+
+[resource]
+script = ExtResource("1_guxnp")
+libraries = Array[MeshLibrary]([ExtResource("1_vx77e"), ExtResource("2_e8jwh"), ExtResource("3_qa3gw"), ExtResource("4_cmx7g"), ExtResource("5_d1q8h"), ExtResource("6_wflic"), ExtResource("7_7piyt"), ExtResource("8_r76kc"), ExtResource("9_05br5"), ExtResource("10_nfvh6"), ExtResource("11_2ehom"), ExtResource("12_3gyam")])
+metadata/_custom_type_script = "uid://bq78578v07lol"

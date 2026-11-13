@@ -1,0 +1,351 @@
+[gd_scene format=3 uid="uid://g1ywoaq71oiy"]
+
+[ext_resource type="PackedScene" uid="uid://cmax7t8p6e2yl" path="res://scenes/world/Models/fatty_model.tscn" id="1_1eyto"]
+[ext_resource type="PackedScene" uid="uid://gt2ug82ek4us" path="res://scenes/player/main_character.tscn" id="2_rss1d"]
+[ext_resource type="PackedScene" uid="uid://bgv22ffbcyt48" path="res://scenes/characters/person.tscn" id="3_0m3gm"]
+[ext_resource type="PackedScene" uid="uid://cxd3odg5s4scp" path="res://scenes/tool/cutscene_player.tscn" id="3_t3jc8"]
+[ext_resource type="ArrayMesh" uid="uid://uwj1h0qvme6l" path="res://vox/furniture/door.vox" id="4_jd5r1"]
+[ext_resource type="PackedScene" uid="uid://3k7wrey2qf4g" path="res://scenes/characters/cash_register.tscn" id="4_rss1d"]
+[ext_resource type="PackedScene" uid="uid://dw2i0vkqcdu47" path="res://scenes/tool/interaction_point.tscn" id="5_0m3gm"]
+[ext_resource type="Texture2D" uid="uid://dueqcfctitmfd" path="res://assets/images/portraits/player/player_angry.png" id="6_bp3yq"]
+[ext_resource type="PackedScene" uid="uid://ddsthje72cbdv" path="res://scenes/tool/story_point.tscn" id="6_t1dts"]
+[ext_resource type="Script" uid="uid://bchmrinehxpk5" path="res://resources/custom_resources/story_action.gd" id="7_fx82s"]
+[ext_resource type="Script" uid="uid://bbjbc8ebh4u8e" path="res://scripts/tool/data_holder.gd" id="7_u1u1j"]
+[ext_resource type="Texture2D" uid="uid://hgognsse1pbq" path="res://assets/images/portraits/player/player_neutral.png" id="7_yo2d7"]
+[ext_resource type="Texture2D" uid="uid://bm70sgfkkr7ex" path="res://assets/images/portraits/player/player_annoyed.png" id="8_188y3"]
+[ext_resource type="Texture2D" uid="uid://c0e2cmiwtjl5s" path="res://assets/images/portraits/player/player_happy.png" id="9_bq3cf"]
+[ext_resource type="AudioStream" uid="uid://b1gyedgldb3c" path="res://sounds/sfx/talking_sounds/male_standard_2.ogg" id="9_u1u1j"]
+[ext_resource type="Texture2D" uid="uid://d1rqevyy3mvoh" path="res://assets/images/portraits/player/player_thinking.png" id="10_3cmkc"]
+[ext_resource type="Script" uid="uid://c1irdit10ydy4" path="res://scripts/tool/dialogue.gd" id="10_pgq6v"]
+[ext_resource type="AudioStream" uid="uid://c5xf52va5nwht" path="res://sounds/sfx/talking_sounds/quick_3.ogg" id="11_bp3yq"]
+[ext_resource type="Resource" uid="uid://d0f3ehpbvqip0" path="res://resources/custom_resources/story/day_1/decision_order_food.tres" id="11_u1u1j"]
+[ext_resource type="Script" uid="uid://dmn52hjovsovi" path="res://scripts/tool/cutscene.gd" id="17_3n7kp"]
+
+[sub_resource type="Animation" id="Animation_3cmkc"]
+resource_name = "RESET"
+
+[sub_resource type="Animation" id="Animation_s8vst"]
+resource_name = "exit_to_world"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"res://scenes/world/StoryScenes/day_1/day_1_world.tscn"],
+"method": &"change_scene"
+}]
+}
+
+[sub_resource type="Resource" id="Resource_u1u1j"]
+script = ExtResource("10_pgq6v")
+text = "You [color=gray]*Yawwwn*[/color] you know me. Anything with caffiene?"
+left_portrait = ExtResource("6_bp3yq")
+right_portrait = ExtResource("10_3cmkc")
+text_sound = ExtResource("9_u1u1j")
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_3cmkc"]
+script = ExtResource("7_u1u1j")
+value = "120"
+data_type = "energy"
+comparator = 3
+metadata/_custom_type_script = "uid://bbjbc8ebh4u8e"
+
+[sub_resource type="Resource" id="Resource_3n7kp"]
+script = ExtResource("10_pgq6v")
+text = "You know me. What's cheapest, Reggie?"
+left_portrait = ExtResource("6_bp3yq")
+right_portrait = ExtResource("7_yo2d7")
+text_sound = ExtResource("9_u1u1j")
+gate = SubResource("Resource_3cmkc")
+deeper_dialogue = SubResource("Resource_u1u1j")
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_yo2d7"]
+script = ExtResource("10_pgq6v")
+text = "Hmm..."
+left_portrait = ExtResource("10_3cmkc")
+waits = false
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Animation" id="Animation_jd5r1"]
+resource_name = "order_food"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutscenePlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 0.1, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [SubResource("Resource_3n7kp"), true],
+"method": &"new_dialogue"
+}, {
+"args": [SubResource("Resource_yo2d7"), false],
+"method": &"new_dialogue"
+}, {
+"args": [ExtResource("11_u1u1j")],
+"method": &"new_decision"
+}]
+}
+
+[sub_resource type="Resource" id="Resource_11pi6"]
+script = ExtResource("10_pgq6v")
+text = "The buttery fires, please, with extra butter and extra salt."
+left_portrait = ExtResource("7_yo2d7")
+right_portrait = ExtResource("9_bq3cf")
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Animation" id="Animation_3n7kp"]
+resource_name = "order_food-fries"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutscenePlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [SubResource("Resource_11pi6"), true],
+"method": &"new_dialogue"
+}]
+}
+
+[sub_resource type="Resource" id="Resource_2ndq8"]
+script = ExtResource("10_pgq6v")
+text = "Give me the special, with extra sauce."
+left_portrait = ExtResource("8_188y3")
+right_portrait = ExtResource("9_bq3cf")
+text_sound = ExtResource("9_u1u1j")
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Animation" id="Animation_2ndq8"]
+resource_name = "order_food-saucey_special"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutscenePlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [SubResource("Resource_2ndq8"), true],
+"method": &"new_dialogue"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_epw8f"]
+_data = {
+&"RESET": SubResource("Animation_3cmkc"),
+&"exit_to_world": SubResource("Animation_s8vst"),
+&"order_food": SubResource("Animation_jd5r1"),
+&"order_food-fries": SubResource("Animation_3n7kp"),
+&"order_food-saucey_special": SubResource("Animation_2ndq8")
+}
+
+[sub_resource type="Resource" id="Resource_iu15w"]
+script = ExtResource("17_3n7kp")
+cutscene_id = &"order_food"
+metadata/_custom_type_script = "uid://dmn52hjovsovi"
+
+[sub_resource type="Animation" id="Animation_u1u1j"]
+resource_name = "RESET"
+
+[sub_resource type="Resource" id="Resource_0d2px"]
+script = ExtResource("10_pgq6v")
+text = "Hello, sir! What would you like today?"
+left_portrait = ExtResource("8_188y3")
+right_portrait = ExtResource("9_bq3cf")
+text_sound = ExtResource("11_bp3yq")
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_bp3yq"]
+script = ExtResource("10_pgq6v")
+text = "According to my database, the cheapest foods for today are..."
+waits = false
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_atmah"]
+script = ExtResource("10_pgq6v")
+text = "...the X-butter fry tray, and the Saucey Special."
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Animation" id="Animation_yo2d7"]
+resource_name = "order_food"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutscenePlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 0.1, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [SubResource("Resource_0d2px"), true],
+"method": &"new_dialogue"
+}, {
+"args": [SubResource("Resource_bp3yq"), false],
+"method": &"new_dialogue"
+}, {
+"args": [SubResource("Resource_atmah"), true],
+"method": &"new_dialogue"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../MainCharacter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [Vector3(0, 180, 0), false],
+"method": &"rotate_mesh"
+}]
+}
+
+[sub_resource type="Resource" id="Resource_itojp"]
+script = ExtResource("10_pgq6v")
+text = "Coming right up! Please take a seat. Your order number is: 0159."
+left_portrait = ExtResource("7_yo2d7")
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_s8vst"]
+script = ExtResource("10_pgq6v")
+text = "Have a good night!"
+left_portrait = ExtResource("10_3cmkc")
+right_portrait = ExtResource("9_bq3cf")
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_2qsqa"]
+script = ExtResource("7_u1u1j")
+value = "18"
+data_type = "world_time:hour"
+metadata/_custom_type_script = "uid://bbjbc8ebh4u8e"
+
+[sub_resource type="Resource" id="Resource_1tmqu"]
+script = ExtResource("10_pgq6v")
+text = "Have a good evening!"
+left_portrait = ExtResource("8_188y3")
+right_portrait = ExtResource("9_bq3cf")
+gate = SubResource("Resource_2qsqa")
+deeper_dialogue = SubResource("Resource_s8vst")
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_d2grn"]
+script = ExtResource("7_u1u1j")
+value = "13"
+data_type = "world_time:hour"
+comparator = 4
+metadata/_custom_type_script = "uid://bbjbc8ebh4u8e"
+
+[sub_resource type="Resource" id="Resource_pgyuc"]
+script = ExtResource("10_pgq6v")
+text = "Have a great day!"
+left_portrait = ExtResource("8_188y3")
+right_portrait = ExtResource("9_bq3cf")
+gate = SubResource("Resource_d2grn")
+deeper_dialogue = SubResource("Resource_1tmqu")
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Animation" id="Animation_atmah"]
+resource_name = "order_food-2"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutscenePlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.16666667),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [SubResource("Resource_itojp"), false],
+"method": &"new_dialogue"
+}, {
+"args": [SubResource("Resource_pgyuc"), true],
+"method": &"new_dialogue"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3cmkc"]
+_data = {
+&"RESET": SubResource("Animation_u1u1j"),
+&"order_food": SubResource("Animation_yo2d7"),
+&"order_food-2": SubResource("Animation_atmah")
+}
+
+[sub_resource type="Resource" id="Resource_t3jc8"]
+script = ExtResource("7_fx82s")
+actionType = 1
+modifiers = [1]
+metadata/_custom_type_script = "uid://bchmrinehxpk5"
+
+[sub_resource type="Resource" id="Resource_705dq"]
+script = ExtResource("7_fx82s")
+actionType = null
+metadata/_custom_type_script = "uid://bchmrinehxpk5"
+
+[node name="Fatties" type="Node3D" unique_id=1555675484]
+
+[node name="Fatty Model" parent="." unique_id=1964657524 instance=ExtResource("1_1eyto")]
+
+[node name="MainCharacter" parent="." unique_id=7935059 node_paths=PackedStringArray("cutscene_player") instance=ExtResource("2_rss1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.25, 0.5)
+cutscene_player = NodePath("CutscenePlayer")
+
+[node name="InteractionPoint" parent="MainCharacter" unique_id=943169738 instance=ExtResource("5_0m3gm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4789577, 0.34379762, 0.6513326)
+interaction_details = "Leave Fatties"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MainCharacter/InteractionPoint" unique_id=1813769107]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.4789577, 0.64502966, 1.0975901)
+top_level = true
+mesh = ExtResource("4_jd5r1")
+
+[node name="CutscenePlayer" parent="MainCharacter" unique_id=1871030014 groups=["player"] instance=ExtResource("3_t3jc8")]
+libraries/ = SubResource("AnimationLibrary_epw8f")
+
+[node name="Person" parent="." unique_id=1758508300 instance=ExtResource("3_0m3gm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.25, -0.5)
+current_state = "Waiting"
+
+[node name="CashRegister" parent="." unique_id=316028788 node_paths=PackedStringArray("cutscene_player") instance=ExtResource("4_rss1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3399391, 0.6718408, -0.14728226)
+cutscene_player = NodePath("CutscenePlayer")
+
+[node name="InteractionPoint" parent="CashRegister" unique_id=1288981550 instance=ExtResource("5_0m3gm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3285755, 0.40741527, 0.7380159)
+interaction_details = "Talk to 'Reggie'"
+cutscene = SubResource("Resource_iu15w")
+collision_range = 0.1
+
+[node name="CutscenePlayer" parent="CashRegister" unique_id=873347748 instance=ExtResource("3_t3jc8")]
+libraries/ = SubResource("AnimationLibrary_3cmkc")
+
+[node name="StoryPoint" parent="." unique_id=476974275 instance=ExtResource("6_t1dts")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4895668, 0, 0.43437105)
+this_story_action = SubResource("Resource_t3jc8")
+cutscene_only = true
+
+[node name="Rando1" parent="." unique_id=1451792475 instance=ExtResource("3_0m3gm")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.75730896, 0.30944794, 0.9891957)
+current_state = "Waiting"
+current_stat = SubResource("Resource_705dq")
+
+[connection signal="dialogue_finished" from="CashRegister/CutscenePlayer" to="CashRegister" method="_on_cutscene_player_dialogue_finished"]
+[connection signal="dialogue_started" from="CashRegister/CutscenePlayer" to="CashRegister" method="_on_cutscene_player_dialogue_started"]

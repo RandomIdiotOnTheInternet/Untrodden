@@ -1,0 +1,19 @@
+Hi. Thanks for reading this! You're awesome :)
+Below is credit, where credit is due:
+
+To JoshMckay, for the character model. This was then taken and used to make the models for the rest of the characters!
+To bart from OpenGameArt for a clock ticking sound
+To Ivan Voirol from OpenGameArt for the cursor
+To MirceaKitsune from (gee shocker) OpenGameArt for the dialogue sounds
+To enekoassets for a sick wobbly Baba Is You shader from GodotShaders (I love this)
+To Calfur for a funny blurring effect (the one you see in the pause menu)
+
+To my wonderful loving family <3
+To Sebastian Blazek, my brother, who helped with the Voxel Art and gave lots of good feedback
+To my church, St. Matthew's of North Royalton, for their great love and kindness :)
+
+And
+(most importantly)
+To you! For taking the time to read this through and playing my game.
+Thanks for playing ;D
+May God grant you many years!

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bbjymevbmimvw"]
+
+[ext_resource type="ArrayMesh" uid="uid://xsgnbbwwq2j2" path="res://vox/furniture/streetLight.vox" id="1_5cngx"]
+[ext_resource type="Script" uid="uid://w7we66oei0jr" path="res://scripts/furniture/streetlight.gd" id="1_rvoqe"]
+[ext_resource type="Material" uid="uid://d1e7m3d1j77gn" path="res://resources/materials/glass_material.tres" id="3_1bf5g"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_rvoqe"]
+material = ExtResource("3_1bf5g")
+size = Vector3(0.21, 0.05, 0.21)
+
+[node name="Streetlight" type="Node3D" unique_id=1547773564]
+script = ExtResource("1_rvoqe")
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1416118690]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = ExtResource("1_5cngx")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=506595261]
+transform = Transform3D(0.99999994, 0, 4.3711385e-08, -4.3711385e-08, 1.9106855e-15, 0.99999994, 0, -1, 1.9106853e-15, 0.14695722, 0.7982427, 0)
+light_energy = 4.0
+spot_range = 3.6171415
+spot_angle = 48.890457
+
+[node name="BulbMesh" type="MeshInstance3D" parent="." unique_id=1799437412]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14942253, 0.72268564, 0)
+mesh = SubResource("BoxMesh_rvoqe")

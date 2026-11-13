@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BodyMeshLibrary" format=3 uid="uid://dqa6yfita58ss"]
+
+[ext_resource type="MeshLibrary" uid="uid://bd02fut4bnple" path="res://vox/furniture/cashregister/cashRegister_normal.vox" id="1_lu86q"]
+[ext_resource type="Script" uid="uid://bq78578v07lol" path="res://scripts/tool/body_mesh_library.gd" id="2_rdn2k"]
+[ext_resource type="MeshLibrary" uid="uid://b2r5gjhcr3fxg" path="res://vox/furniture/cashregister/cashRegister_sad.vox" id="2_ryui1"]
+
+[resource]
+script = ExtResource("2_rdn2k")
+libraries = Array[MeshLibrary]([ExtResource("1_lu86q"), ExtResource("2_ryui1")])
+metadata/_custom_type_script = "uid://bq78578v07lol"

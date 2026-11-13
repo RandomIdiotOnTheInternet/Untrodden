@@ -1,0 +1,573 @@
+[gd_scene format=3 uid="uid://bxpvjwlddld38"]
+
+[ext_resource type="Texture2D" uid="uid://bjqtt8snw7270" path="res://assets/images/computer/computer_wallpaper.jpg" id="1_fu0gr"]
+[ext_resource type="Script" uid="uid://b8nuwnvcpni67" path="res://scripts/UI/computer.gd" id="1_oxaeo"]
+[ext_resource type="PackedScene" uid="uid://dsaf2v70lh1es" path="res://scenes/UI/desktop_icon.tscn" id="2_7wlyl"]
+[ext_resource type="PackedScene" uid="uid://cxd3odg5s4scp" path="res://scenes/tool/cutscene_player.tscn" id="2_q7qbc"]
+[ext_resource type="Material" uid="uid://d2hxjprvfpjqf" path="res://resources/shaders/computerShader.tres" id="2_vf1xy"]
+[ext_resource type="Texture2D" uid="uid://b7qv3eulj0xxb" path="res://icon.svg" id="3_7wlyl"]
+[ext_resource type="Texture2D" uid="uid://cd0mximlchh24" path="res://assets/images/computer/MicrosoftHedge.png" id="3_h2lx2"]
+[ext_resource type="Texture2D" uid="uid://5o4px2lccjox" path="res://assets/images/portraits/player/player_sad.png" id="3_ndtp6"]
+[ext_resource type="StyleBox" uid="uid://dww2eoal38doy" path="res://resources/themes/computer_bar.tres" id="3_wvv1g"]
+[ext_resource type="AudioStream" uid="uid://b1gyedgldb3c" path="res://sounds/sfx/talking_sounds/male_standard_2.ogg" id="4_476ml"]
+[ext_resource type="Script" uid="uid://c1irdit10ydy4" path="res://scripts/tool/dialogue.gd" id="4_mtkmk"]
+[ext_resource type="FontFile" uid="uid://dc0vefpbebp5q" path="res://resources/fonts/born2bsporty-fs/Born2bSportyFS.otf" id="5_1ttny"]
+[ext_resource type="Texture2D" uid="uid://d1rqevyy3mvoh" path="res://assets/images/portraits/player/player_thinking.png" id="5_8g8yk"]
+[ext_resource type="Texture2D" uid="uid://c0e2cmiwtjl5s" path="res://assets/images/portraits/player/player_happy.png" id="6_u0jq4"]
+[ext_resource type="Texture2D" uid="uid://bm70sgfkkr7ex" path="res://assets/images/portraits/player/player_annoyed.png" id="7_l3vqn"]
+[ext_resource type="Texture2D" uid="uid://hgognsse1pbq" path="res://assets/images/portraits/player/player_neutral.png" id="7_xic6m"]
+[ext_resource type="Script" uid="uid://bbjbc8ebh4u8e" path="res://scripts/tool/data_holder.gd" id="8_mtkmk"]
+[ext_resource type="PackedScene" uid="uid://blf17ltu5xenx" path="res://scenes/UI/player_UI.tscn" id="9_vf1xy"]
+[ext_resource type="Script" uid="uid://dmn52hjovsovi" path="res://scripts/tool/cutscene.gd" id="9_yv1ma"]
+[ext_resource type="Script" uid="uid://bjploipt1rv4x" path="res://scripts/tool/decision_option.gd" id="10_mtkmk"]
+[ext_resource type="Script" uid="uid://c5p7diksqo6j" path="res://scripts/tool/decision.gd" id="11_yv1ma"]
+[ext_resource type="PackedScene" uid="uid://ce3o4kv1bpbf0" path="res://scenes/UI/BMailScreen.tscn" id="13_u0jq4"]
+
+[sub_resource type="Animation" id="Animation_ugpo7"]
+resource_name = "RESET"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutscenePlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="Resource" id="Resource_ndtp6"]
+script = ExtResource("4_mtkmk")
+text = "Hmm..."
+left_portrait = ExtResource("5_8g8yk")
+text_sound = ExtResource("4_476ml")
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Animation" id="Animation_xic6m"]
+resource_name = "bmail_choice"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutscenePlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [SubResource("Resource_ndtp6"), true],
+"method": &"new_dialogue"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Window/WindowScreen/BmailScreen")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.16666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"new_bmail_decision"
+}]
+}
+
+[sub_resource type="Resource" id="Resource_mtkmk"]
+script = ExtResource("4_mtkmk")
+text = "I don't know anyone worth writing to."
+left_portrait = ExtResource("7_l3vqn")
+text_sound = ExtResource("4_476ml")
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_yv1ma"]
+script = ExtResource("8_mtkmk")
+value = "0"
+data_type = "known_bmail_addresses"
+comparator = 6
+metadata/_custom_type_script = "uid://bbjbc8ebh4u8e"
+
+[sub_resource type="Resource" id="Resource_payoi"]
+script = ExtResource("4_mtkmk")
+text = "Hmm... who should I write to?"
+left_portrait = ExtResource("5_8g8yk")
+text_sound = ExtResource("4_476ml")
+gate = SubResource("Resource_yv1ma")
+deeper_dialogue = SubResource("Resource_mtkmk")
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_h5fh3"]
+script = ExtResource("9_yv1ma")
+cutscene_id = &"bmail_compose-decision"
+gate = SubResource("Resource_yv1ma")
+metadata/_custom_type_script = "uid://dmn52hjovsovi"
+
+[sub_resource type="Resource" id="Resource_whsky"]
+script = ExtResource("10_mtkmk")
+metadata/_custom_type_script = "uid://bjploipt1rv4x"
+
+[sub_resource type="Resource" id="Resource_v2my3"]
+script = ExtResource("11_yv1ma")
+options = Array[ExtResource("10_mtkmk")]([SubResource("Resource_whsky")])
+metadata/_custom_type_script = "uid://c5p7diksqo6j"
+
+[sub_resource type="Animation" id="Animation_ndtp6"]
+resource_name = "bmail_compose"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutscenePlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.13333334, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [SubResource("Resource_payoi"), false],
+"method": &"new_dialogue"
+}, {
+"args": [SubResource("Resource_h5fh3"), 0.0],
+"method": &"change_cutscene"
+}, {
+"args": [SubResource("Resource_v2my3")],
+"method": &"new_decision"
+}]
+}
+
+[sub_resource type="Resource" id="Resource_w1na1"]
+script = ExtResource("4_mtkmk")
+text = "Alright, here goes..."
+left_portrait = ExtResource("7_xic6m")
+text_sound = ExtResource("4_476ml")
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Animation" id="Animation_payoi"]
+resource_name = "bmail_reply"
+length = 0.16666667
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutscenePlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [SubResource("Resource_w1na1"), true],
+"method": &"new_dialogue"
+}]
+}
+
+[sub_resource type="Resource" id="Resource_aqsw1"]
+script = ExtResource("4_mtkmk")
+text = "I can take some time for this one[fade]..."
+left_portrait = ExtResource("5_8g8yk")
+text_sound = ExtResource("4_476ml")
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Animation" id="Animation_l3vqn"]
+resource_name = "good_reply"
+length = 0.16666667
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutscenePlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [SubResource("Resource_aqsw1"), true],
+"method": &"new_dialogue"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u0jq4"]
+_data = {
+&"RESET": SubResource("Animation_ugpo7"),
+&"bmail_choice": SubResource("Animation_xic6m"),
+&"bmail_compose": SubResource("Animation_ndtp6"),
+&"bmail_reply": SubResource("Animation_payoi"),
+&"good_reply": SubResource("Animation_l3vqn")
+}
+
+[sub_resource type="Resource" id="Resource_tmaym"]
+script = ExtResource("4_mtkmk")
+text = "Welp. Time to start work."
+left_portrait = ExtResource("3_ndtp6")
+text_sound = ExtResource("4_476ml")
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_euym6"]
+script = ExtResource("4_mtkmk")
+text = "I guess somebody's got to do it. In this company anyway, everywhere else it's just chatbots."
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_lyfkq"]
+script = ExtResource("4_mtkmk")
+text = "I'd better hop to it. [color=cyan]I get paied by the Bmail[/color], so the quicker I get this over with, the better."
+left_portrait = ExtResource("7_l3vqn")
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_75151"]
+script = ExtResource("4_mtkmk")
+text = "...Besides, the quicker I get them done, the sooner [color=cyan]I can play games."
+left_portrait = ExtResource("6_u0jq4")
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_uxa34"]
+script = ExtResource("4_mtkmk")
+text = "Here we go again..."
+left_portrait = ExtResource("3_ndtp6")
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Animation" id="Animation_ybx8n"]
+resource_name = "begin_work"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutscenePlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.13333333, 0.23333332, 0.3333333, 0.43333334, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"values": [{
+"args": [SubResource("Resource_tmaym"), true],
+"method": &"new_dialogue"
+}, {
+"args": [SubResource("Resource_euym6"), true],
+"method": &"new_dialogue"
+}, {
+"args": [SubResource("Resource_lyfkq"), true],
+"method": &"new_dialogue"
+}, {
+"args": [SubResource("Resource_75151"), true],
+"method": &"new_dialogue"
+}, {
+"args": [SubResource("Resource_uxa34"), true],
+"method": &"new_dialogue"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xic6m"]
+_data = {
+&"begin_work": SubResource("Animation_ybx8n")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d2px"]
+bg_color = Color(0.36394337, 0, 0.055283904, 1)
+
+[node name="Computer" type="Control" unique_id=745166476]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_oxaeo")
+
+[node name="CutscenePlayer" parent="." unique_id=1871030014 groups=["player"] instance=ExtResource("2_q7qbc")]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_u0jq4")
+libraries/day_1 = SubResource("AnimationLibrary_xic6m")
+
+[node name="DesktopBG" type="TextureRect" parent="." unique_id=1094282350]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_fu0gr")
+expand_mode = 1
+
+[node name="DesktopIcons" type="MarginContainer" parent="." unique_id=258849650]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.104
+anchor_bottom = 1.0
+offset_right = 0.19200134
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="IconContainer" type="VBoxContainer" parent="DesktopIcons" unique_id=1607214428]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="DesktopIcon" parent="DesktopIcons/IconContainer" unique_id=1307110461 instance=ExtResource("2_7wlyl")]
+layout_mode = 2
+texture_normal = ExtResource("3_h2lx2")
+
+[node name="Label" parent="DesktopIcons/IconContainer/DesktopIcon" index="0" unique_id=524791738]
+text = "Macrosoft Hedge"
+
+[node name="DesktopIcon2" parent="DesktopIcons/IconContainer" unique_id=353842270 instance=ExtResource("2_7wlyl")]
+layout_mode = 2
+
+[node name="Label" parent="DesktopIcons/IconContainer/DesktopIcon2" index="0" unique_id=524791738]
+text = "BMailServices"
+
+[node name="DesktopIcon3" parent="DesktopIcons/IconContainer" unique_id=1574056715 instance=ExtResource("2_7wlyl")]
+layout_mode = 2
+
+[node name="Label" parent="DesktopIcons/IconContainer/DesktopIcon3" index="0" unique_id=524791738]
+text = "Recycling Bin"
+
+[node name="DesktopIcon4" parent="DesktopIcons/IconContainer" unique_id=1370997181 instance=ExtResource("2_7wlyl")]
+layout_mode = 2
+texture_normal = ExtResource("3_7wlyl")
+
+[node name="Label" parent="DesktopIcons/IconContainer/DesktopIcon4" index="0" unique_id=524791738]
+text = "Game4Ever"
+
+[node name="Taskbar" type="Panel" parent="." unique_id=1955615505]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -53.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = ExtResource("3_wvv1g")
+
+[node name="TaskbarContainer" type="HBoxContainer" parent="Taskbar" unique_id=1542554172]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="Taskbar/TaskbarContainer" unique_id=1665819871]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+texture_normal = ExtResource("3_h2lx2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButton2" type="TextureButton" parent="Taskbar/TaskbarContainer" unique_id=1735674684]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+texture_normal = ExtResource("3_7wlyl")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="DateAndTime" type="RichTextLabel" parent="Taskbar" unique_id=42543370]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9003403
+anchor_top = 0.5
+anchor_right = 0.9826389
+anchor_bottom = 0.578982
+offset_left = -0.1920166
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "13[pulse]:[/pulse]00AM
+6/16/2026"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Window" type="VBoxContainer" parent="." unique_id=2093027482]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Panel" type="Panel" parent="Window" unique_id=1447193520]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("3_wvv1g")
+
+[node name="WindowLabel" type="Label" parent="Window/Panel" unique_id=194461907]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Microsoft Hedge - New Tab"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel" unique_id=1527424066]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -952.0
+grow_horizontal = 0
+grow_vertical = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Window/Panel/HBoxContainer" unique_id=1424684540]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="MinimiseButton" type="Button" parent="Window/Panel/HBoxContainer/MarginContainer" unique_id=108163474]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_1ttny")
+theme_override_font_sizes/font_size = 12
+text = "-"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Window/Panel/HBoxContainer" unique_id=673173308]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="SizeButton" type="Button" parent="Window/Panel/HBoxContainer/MarginContainer2" unique_id=40379286]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_1ttny")
+theme_override_font_sizes/font_size = 12
+text = "[0]"
+
+[node name="MarginContainer3" type="MarginContainer" parent="Window/Panel/HBoxContainer" unique_id=747783968]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="CloseButton" type="Button" parent="Window/Panel/HBoxContainer/MarginContainer3" unique_id=1362988681]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_1ttny")
+theme_override_font_sizes/font_size = 12
+text = "X"
+
+[node name="WindowScreen" type="Control" parent="Window" unique_id=872633966]
+custom_minimum_size = Vector2(0, 566)
+layout_mode = 2
+
+[node name="BmailScreen" parent="Window/WindowScreen" unique_id=1117324237 instance=ExtResource("13_u0jq4")]
+custom_minimum_size = Vector2(0, 567)
+custom_maximum_size = Vector2(-1, 567)
+layout_mode = 1
+offset_top = -0.5
+offset_bottom = 0.5
+
+[node name="BmailLockScreen" type="Panel" parent="Window/WindowScreen" unique_id=1663067620]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 567)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0d2px")
+
+[node name="Button" type="Button" parent="Window/WindowScreen/BmailLockScreen" unique_id=1605051453]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 236.0
+offset_right = 578.0
+offset_bottom = 271.0
+text = "Return"
+
+[node name="MarginContainer" type="MarginContainer" parent="Window/WindowScreen/BmailLockScreen" unique_id=1663080522]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/WindowScreen/BmailLockScreen/MarginContainer" unique_id=689609536]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="Window/WindowScreen/BmailLockScreen/MarginContainer/VBoxContainer" unique_id=2074804027]
+layout_mode = 2
+text = "This website is not allowed by your B-Mail provider.
+
+Please return to your allowed website."
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/WindowScreen/BmailLockScreen/MarginContainer/VBoxContainer" unique_id=1308952244]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Button2" type="Button" parent="Window/WindowScreen/BmailLockScreen/MarginContainer/VBoxContainer/HBoxContainer" unique_id=296043391]
+layout_mode = 2
+text = "Close"
+
+[node name="Label2" type="RichTextLabel" parent="Window/WindowScreen/BmailLockScreen/MarginContainer/VBoxContainer" unique_id=1092181939]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "If you believe this is an error,
+please call 951-262-3062, and we will make
+sure to leave you on hold for about 2 hours
+before telling you no representitive
+is availiable at this time."
+fit_content = true
+horizontal_alignment = 1
+
+[node name="PostprocessingRect" type="ColorRect" parent="." unique_id=933602545]
+material = ExtResource("2_vf1xy")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PlayerUI" parent="." unique_id=1749572904 instance=ExtResource("9_vf1xy")]
+layout_mode = 1
+
+[connection signal="pressed" from="Window/Panel/HBoxContainer/MarginContainer/MinimiseButton" to="." method="close_window"]
+[connection signal="pressed" from="Window/Panel/HBoxContainer/MarginContainer3/CloseButton" to="." method="close_window"]
+[connection signal="decision_made" from="PlayerUI" to="Window/WindowScreen/BmailScreen" method="start_new_bmail"]
+
+[editable path="DesktopIcons/IconContainer/DesktopIcon"]
+[editable path="DesktopIcons/IconContainer/DesktopIcon2"]
+[editable path="DesktopIcons/IconContainer/DesktopIcon3"]
+[editable path="DesktopIcons/IconContainer/DesktopIcon4"]

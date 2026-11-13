@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dvbwgicmyosjm"
+path="res://.godot/imported/Devil's Grasp (Solemn Majestic Cutscene).mp3-6f31610b3eecbc226ef54b8c06d2a28b.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/Devil's Grasp (Solemn Majestic Cutscene).mp3"
+dest_files=["res://.godot/imported/Devil's Grasp (Solemn Majestic Cutscene).mp3-6f31610b3eecbc226ef54b8c06d2a28b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,249 @@
+[gd_scene format=3 uid="uid://ce3o4kv1bpbf0"]
+
+[ext_resource type="Theme" uid="uid://kgkrtpvr80cq" path="res://resources/themes/MainTheme.tres" id="1_4dugs"]
+[ext_resource type="Script" uid="uid://dgy607ik3waru" path="res://scripts/UI/b_mail_screen.gd" id="1_y4f5r"]
+[ext_resource type="PackedScene" uid="uid://cju10d50ogknl" path="res://scenes/UI/Bmail.tscn" id="2_cqjd6"]
+[ext_resource type="FontFile" uid="uid://dxq0oy3qpx2y0" path="res://resources/fonts/RobotoMono-VariableFont_wght.ttf" id="2_ihx5e"]
+[ext_resource type="Resource" uid="uid://bu4rdguieqi7y" path="res://resources/custom_resources/story/bmails/Day 1/bmail_refund.tres" id="4_kcvc6"]
+[ext_resource type="Resource" uid="uid://d1s1blkj38vrb" path="res://resources/custom_resources/story/bmails/Day 1/bmail_lonely.tres" id="5_a3ss2"]
+[ext_resource type="PackedScene" uid="uid://c7cmjg6bwlc5" path="res://scenes/UI/revealing_text.tscn" id="8_h25y1"]
+[ext_resource type="Material" uid="uid://d2hxjprvfpjqf" path="res://resources/shaders/computerShader.tres" id="9_kcvc6"]
+
+[node name="BmailScreen" type="Control" unique_id=1117324237]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y4f5r")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=349292126]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.077628784, 0.07762883, 0.07762881, 1)
+
+[node name="BMail" type="RichTextLabel" parent="." unique_id=497569756]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.040123455
+anchor_right = 1.0
+anchor_bottom = 0.17901234
+grow_horizontal = 2
+theme = ExtResource("1_4dugs")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[color=yellow][wave]B-Mail"
+scroll_active = false
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="NoMail" type="Label" parent="." unique_id=1603121501]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.004
+anchor_top = 0.23600002
+anchor_right = 0.254
+anchor_bottom = 0.38900003
+offset_left = 0.39199972
+offset_top = 0.07199097
+offset_right = 0.3919983
+offset_bottom = -0.072021484
+text = "No Mail here..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mail Pannel" type="HBoxContainer" parent="." unique_id=2130249355]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -574.0
+offset_top = -171.0
+offset_right = 576.0
+offset_bottom = 268.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BmailContainer" type="VBoxContainer" parent="Mail Pannel" unique_id=267990495]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+theme = ExtResource("1_4dugs")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Mail Pannel/BmailContainer" unique_id=995783623]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Compose" type="Button" parent="Mail Pannel/BmailContainer/HBoxContainer" unique_id=85468761]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+text = "Compose"
+
+[node name="DeleteAll" type="Button" parent="Mail Pannel/BmailContainer/HBoxContainer" unique_id=2056724160]
+layout_mode = 2
+text = "Delete All"
+
+[node name="Bmail" parent="Mail Pannel/BmailContainer" unique_id=1124589211 instance=ExtResource("2_cqjd6")]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme_override_constants/outline_size = 2
+text = "From: Jack
+Work notice!!!"
+expand_icon = true
+data = ExtResource("4_kcvc6")
+
+[node name="Bmail2" parent="Mail Pannel/BmailContainer" unique_id=2102576362 instance=ExtResource("2_cqjd6")]
+layout_mode = 2
+autowrap_mode = 2
+data = ExtResource("5_a3ss2")
+
+[node name="BmailContents" type="Panel" parent="Mail Pannel" unique_id=1902299449]
+custom_minimum_size = Vector2(800, 200)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Mail Pannel/BmailContents" unique_id=704411700]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.001
+anchor_bottom = 0.994
+offset_right = 0.14398193
+offset_bottom = 19.970001
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Mail Pannel/BmailContents/MarginContainer" unique_id=1764208811]
+layout_mode = 2
+
+[node name="TopBmailText" type="Label" parent="Mail Pannel/BmailContents/MarginContainer/VBoxContainer" unique_id=2079156473]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "From; Jack
+To: You + (12 others...)
+
+URGENT - Work Notice!"
+
+[node name="HSeparator" type="HSeparator" parent="Mail Pannel/BmailContents/MarginContainer/VBoxContainer" unique_id=1256621780]
+layout_mode = 2
+
+[node name="BottomBmailText" type="RichTextLabel" parent="Mail Pannel/BmailContents/MarginContainer/VBoxContainer" unique_id=212193695]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = "[color=dark_gray][font_size=20]There's nothing here..."
+
+[node name="HSeparator2" type="HSeparator" parent="Mail Pannel/BmailContents/MarginContainer/VBoxContainer" unique_id=1633515003]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Mail Pannel/BmailContents/MarginContainer/VBoxContainer" unique_id=541037050]
+layout_mode = 2
+alignment = 1
+
+[node name="Reply" type="Button" parent="Mail Pannel/BmailContents/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1220496933]
+layout_mode = 2
+text = "Reply"
+
+[node name="VSeparator" type="VSeparator" parent="Mail Pannel/BmailContents/MarginContainer/VBoxContainer/HBoxContainer" unique_id=88661739]
+layout_mode = 2
+
+[node name="Delete" type="Button" parent="Mail Pannel/BmailContents/MarginContainer/VBoxContainer/HBoxContainer" unique_id=223326388]
+layout_mode = 2
+text = "Delete"
+
+[node name="Draft Pannel" type="PanelContainer" parent="." unique_id=1550635151]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Draft Pannel" unique_id=1692039295]
+layout_mode = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 75
+
+[node name="BmailContents" type="Panel" parent="Draft Pannel/MarginContainer" unique_id=618589265]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Draft Pannel/MarginContainer/BmailContents" unique_id=2112016716]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.001
+anchor_bottom = 0.994
+offset_right = 0.14398193
+offset_bottom = -0.02999878
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Draft Pannel/MarginContainer/BmailContents/MarginContainer" unique_id=1819385456]
+layout_mode = 2
+
+[node name="TopDraftText" type="Label" parent="Draft Pannel/MarginContainer/BmailContents/MarginContainer/VBoxContainer" unique_id=1775322047]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ihx5e")
+theme_override_font_sizes/font_size = 20
+text = "From: You
+To: (Anonymous)
+
+RE: ???"
+
+[node name="HSeparator" type="HSeparator" parent="Draft Pannel/MarginContainer/BmailContents/MarginContainer/VBoxContainer" unique_id=1075323459]
+layout_mode = 2
+
+[node name="DraftText" parent="Draft Pannel/MarginContainer/BmailContents/MarginContainer/VBoxContainer" unique_id=657346729 instance=ExtResource("8_h25y1")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+scroll_active = true
+horizontal_alignment = 0
+vertical_alignment = 0
+keyboard_activated = true
+punctuation_pauses = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Draft Pannel/MarginContainer/BmailContents/MarginContainer/VBoxContainer" unique_id=1488882291]
+layout_mode = 2
+alignment = 1
+
+[node name="SendButton" type="Button" parent="Draft Pannel/MarginContainer/BmailContents/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1333412377]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Send"
+
+[node name="VSeparator" type="VSeparator" parent="Draft Pannel/MarginContainer/BmailContents/MarginContainer/VBoxContainer/HBoxContainer" unique_id=940189255]
+layout_mode = 2
+
+[node name="DeleteButton" type="Button" parent="Draft Pannel/MarginContainer/BmailContents/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2118125589]
+layout_mode = 2
+disabled = true
+text = "Delete"
+
+[node name="PostProcessing" type="ColorRect" parent="." unique_id=1267537749]
+unique_name_in_owner = true
+material = ExtResource("9_kcvc6")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[connection signal="pressed" from="Mail Pannel/BmailContainer/HBoxContainer/Compose" to="." method="_on_compose_pressed"]
+[connection signal="pressed" from="Mail Pannel/BmailContents/MarginContainer/VBoxContainer/HBoxContainer/Reply" to="." method="_on_reply_button_pressed"]
+[connection signal="finishedRevealing" from="Draft Pannel/MarginContainer/BmailContents/MarginContainer/VBoxContainer/DraftText" to="." method="_on_reply_text_finished_revealing"]
+[connection signal="pressed" from="Draft Pannel/MarginContainer/BmailContents/MarginContainer/VBoxContainer/HBoxContainer/SendButton" to="." method="_on_send_button_pressed"]
+[connection signal="pressed" from="Draft Pannel/MarginContainer/BmailContents/MarginContainer/VBoxContainer/HBoxContainer/DeleteButton" to="." method="_on_delete_button_pressed"]

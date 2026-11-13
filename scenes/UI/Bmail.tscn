@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cju10d50ogknl"]
+
+[ext_resource type="StyleBox" uid="uid://dhmoc71pe3xfy" path="res://resources/themes/BmailPanels.tres" id="1_pskn1"]
+[ext_resource type="StyleBox" uid="uid://ce7w2ttrh41gw" path="res://resources/themes/BmailPanel_selected.tres" id="2_qy31i"]
+[ext_resource type="Script" uid="uid://bljdbppvw0t0v" path="res://scripts/UI/bmail.gd" id="4_gu0pf"]
+
+[node name="Bmail" type="Button" unique_id=1927102217]
+custom_minimum_size = Vector2(0, 100)
+anchors_preset = -1
+anchor_right = 0.22600001
+anchor_bottom = 0.15400001
+offset_right = -0.35202026
+offset_bottom = 0.20799255
+theme_override_styles/normal = ExtResource("1_pskn1")
+theme_override_styles/pressed = ExtResource("2_qy31i")
+theme_override_styles/hover = ExtResource("1_pskn1")
+script = ExtResource("4_gu0pf")
+
+[connection signal="button_down" from="." to="." method="_on_pressed"]

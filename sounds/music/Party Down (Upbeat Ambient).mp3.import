@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bpwobeevvgem5"
+path="res://.godot/imported/Party Down (Upbeat Ambient).mp3-f7466757105ed7f4d3b0efe7f8d32562.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/Party Down (Upbeat Ambient).mp3"
+dest_files=["res://.godot/imported/Party Down (Upbeat Ambient).mp3-f7466757105ed7f4d3b0efe7f8d32562.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

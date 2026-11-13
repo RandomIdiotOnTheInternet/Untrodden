@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d2oa6je577xcn"
+path="res://.godot/imported/Change Of Heart (Moody World Beat).mp3-6a07dbfd5e741c077d914661186cea7a.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/Change Of Heart (Moody World Beat).mp3"
+dest_files=["res://.godot/imported/Change Of Heart (Moody World Beat).mp3-6a07dbfd5e741c077d914661186cea7a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

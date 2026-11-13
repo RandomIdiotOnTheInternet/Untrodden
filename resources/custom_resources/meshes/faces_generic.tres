@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BodyMeshLibrary" format=3 uid="uid://dlinsq48nyvw"]
+
+[ext_resource type="MeshLibrary" uid="uid://ce0v38ecjswx1" path="res://vox/people/faces/face_graymustache_normal.tres" id="1_ahosw"]
+[ext_resource type="Script" uid="uid://bq78578v07lol" path="res://scripts/tool/body_mesh_library.gd" id="1_df3uw"]
+[ext_resource type="MeshLibrary" uid="uid://c8dkc3owpwhd" path="res://vox/people/faces/face_blue_normal.tres" id="2_ce0gs"]
+[ext_resource type="MeshLibrary" uid="uid://crdhhraiohwa1" path="res://vox/people/faces/face_brown_normal.tres" id="3_377kf"]
+
+[resource]
+script = ExtResource("1_df3uw")
+libraries = Array[MeshLibrary]([ExtResource("1_ahosw"), ExtResource("2_ce0gs"), ExtResource("3_377kf")])
+metadata/_custom_type_script = "uid://bq78578v07lol"

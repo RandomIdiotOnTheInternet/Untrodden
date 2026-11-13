@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://is03yf14668u"]
+
+[ext_resource type="Shader" uid="uid://ciyn6xhll7pta" path="res://resources/shaders/UIshaking.gdshader" id="1_uiifj"]
+
+[resource]
+shader = ExtResource("1_uiifj")
+shader_parameter/interval = 0.01
+shader_parameter/timeDelay = 0.0
+shader_parameter/intensityX = 20.0
+shader_parameter/intensityY = 20.0
+shader_parameter/seed = 42.0

@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://d06f3x5e23oe0"]
+
+[ext_resource type="Shader" uid="uid://dl2f20idiaaue" path="res://resources/shaders/voxel_depth.gdshader" id="1_jawba"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4xngt"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_pq03q"]
+noise = SubResource("FastNoiseLite_4xngt")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6xt7s"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hdp8q"]
+noise = SubResource("FastNoiseLite_6xt7s")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_jawba")
+shader_parameter/albedo_map = SubResource("NoiseTexture2D_pq03q")
+shader_parameter/height_map = SubResource("NoiseTexture2D_hdp8q")
+shader_parameter/uv_tiling = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/auto_depth = true
+shader_parameter/depth = 0.125
+shader_parameter/levels = 16
+shader_parameter/max_steps = 64

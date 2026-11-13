@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://3k7wrey2qf4g"]
+
+[ext_resource type="Script" uid="uid://dnysnxay6cdfp" path="res://scenes/characters/cash_register.gd" id="1_qb2nl"]
+[ext_resource type="PackedScene" uid="uid://c3fh7b5xpvt8b" path="res://scenes/tool/character_mesh.tscn" id="2_lrqcj"]
+[ext_resource type="Resource" uid="uid://dqa6yfita58ss" path="res://resources/custom_resources/meshes/cash_register.tres" id="3_i3kxm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qb2nl"]
+size = Vector3(0.31402588, 1.8338623, 0.22875977)
+
+[node name="CashRegister" type="Node3D" unique_id=316028788]
+script = ExtResource("1_qb2nl")
+
+[node name="CharacterMesh" parent="." unique_id=657120291 instance=ExtResource("2_lrqcj")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+head_libraries = null
+face_libraries = ExtResource("3_i3kxm")
+torso_libraries = null
+arms_libraries = null
+legs_libraries = null
+blinking_active = false
+
+[node name="TalkTimer" type="Timer" parent="." unique_id=1428309820]
+wait_time = 0.25
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1031325033]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.064575076)
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=547362431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010101318, 0.25636655, 0.076538086)
+shape = SubResource("BoxShape3D_qb2nl")
+
+[node name="AreaLight3D" type="AreaLight3D" parent="." unique_id=893145761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10327026, 0.23525417)
+light_color = Color(0, 1, 0, 1)
+light_energy = 0.75
+area_size = Vector2(0.47642744, 0.3592887)
+
+[connection signal="timeout" from="TalkTimer" to="." method="_on_talk_timer_timeout"]

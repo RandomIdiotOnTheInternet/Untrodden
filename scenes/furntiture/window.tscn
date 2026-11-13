@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://ctf0w8ekbkaxg"]
+
+[ext_resource type="ArrayMesh" uid="uid://cponr0ia3xndq" path="res://vox/furniture/Window.vox" id="1_vm5qa"]
+[ext_resource type="Material" uid="uid://d1e7m3d1j77gn" path="res://resources/materials/glass_material.tres" id="2_o5cer"]
+[ext_resource type="Script" uid="uid://h6ff07skypo7" path="res://scripts/furniture/window.gd" id="2_x0d2e"]
+[ext_resource type="Material" uid="uid://beobncco0nw3d" path="res://resources/materials/darkness.tres" id="3_o5cer"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_n0wty"]
+material = ExtResource("2_o5cer")
+size = Vector3(1.2, 2, 0.1)
+
+[node name="Window" type="MeshInstance3D" unique_id=465312814]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = ExtResource("1_vm5qa")
+script = ExtResource("2_x0d2e")
+night_material = ExtResource("3_o5cer")
+
+[node name="Glass" type="MeshInstance3D" parent="." unique_id=772646505]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0.8655486, 0)
+mesh = SubResource("BoxMesh_n0wty")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1383905810]
+transform = Transform3D(-2, -7.105428e-15, 1.7484557e-07, 1.2363448e-07, 1.4142135, 1.4142137, -1.2363448e-07, 1.4142137, -1.4142135, 0, 0.99626684, -0.022047043)
+light_color = Color(0.8, 0.8, 0.8, 1)
+light_energy = 2.0
+spot_range = 2.8666575
+spot_angle = 66.52973

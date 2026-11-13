@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://c3fh7b5xpvt8b"]
+
+[ext_resource type="Script" uid="uid://dwplkp5ymhhj2" path="res://scripts/tool/character_mesh.gd" id="1_towh4"]
+[ext_resource type="ArrayMesh" uid="uid://hl3satgde0et" path="res://vox/people/heads/head_generic_male_3.vox" id="2_6jfri"]
+[ext_resource type="Resource" uid="uid://dafgeuynn0xqi" path="res://resources/custom_resources/meshes/heads_fatties.tres" id="2_cx620"]
+[ext_resource type="ArrayMesh" uid="uid://qigx7pf6xngr" path="res://vox/people/faces/brown_surprised.vox" id="2_w65a3"]
+[ext_resource type="Resource" uid="uid://dlinsq48nyvw" path="res://resources/custom_resources/meshes/faces_generic.tres" id="3_sm2m7"]
+[ext_resource type="Resource" uid="uid://cskj6eow3qv8p" path="res://resources/custom_resources/meshes/torsos_generic_male.tres" id="4_634xv"]
+[ext_resource type="Resource" uid="uid://b1qfcsun3lwlk" path="res://resources/custom_resources/meshes/arms_elder.tres" id="5_634xv"]
+[ext_resource type="Resource" uid="uid://bpexvqua6mix2" path="res://resources/custom_resources/meshes/legs_generic_male.tres" id="5_cx620"]
+[ext_resource type="ArrayMesh" uid="uid://c17tbdvgru2x3" path="res://vox/people/legs/legs_fatties_male.vox" id="6_6jfri"]
+[ext_resource type="ArrayMesh" uid="uid://dya5t3elwtgli" path="res://vox/people/torsos/torso_placeholder.vox" id="9_634xv"]
+[ext_resource type="ArrayMesh" uid="uid://dpmit4jkx7mu7" path="res://vox/people/arms/arm_placeholder.vox" id="10_sm2m7"]
+
+[node name="CharacterMesh" type="MeshInstance3D" unique_id=657120291]
+script = ExtResource("1_towh4")
+head_libraries = ExtResource("2_cx620")
+face_libraries = ExtResource("3_sm2m7")
+torso_libraries = ExtResource("4_634xv")
+arms_libraries = ExtResource("5_634xv")
+legs_libraries = ExtResource("5_cx620")
+
+[node name="HeadMesh" type="MeshInstance3D" parent="." unique_id=284683490]
+mesh = ExtResource("2_6jfri")
+
+[node name="FaceMesh" type="MeshInstance3D" parent="." unique_id=1943588985]
+mesh = ExtResource("2_w65a3")
+
+[node name="BlinkTimer" type="Timer" parent="FaceMesh" unique_id=1349519802]
+
+[node name="TorsoMesh" type="MeshInstance3D" parent="." unique_id=377947503]
+mesh = ExtResource("9_634xv")
+skeleton = NodePath("../FaceMesh")
+
+[node name="LegsMesh" type="MeshInstance3D" parent="." unique_id=35922286]
+mesh = ExtResource("6_6jfri")
+
+[node name="WalkTimer" type="Timer" parent="LegsMesh" unique_id=1444767858]
+wait_time = 0.2
+
+[node name="HeldItemMesh" type="MeshInstance3D" parent="." unique_id=1902153630]
+
+[node name="ArmMeshLeft" type="MeshInstance3D" parent="." unique_id=1126258715]
+mesh = ExtResource("10_sm2m7")
+
+[node name="ArmMeshRight" type="MeshInstance3D" parent="." unique_id=228639445]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.1, 0, 0)
+mesh = ExtResource("10_sm2m7")
+
+[connection signal="timeout" from="FaceMesh/BlinkTimer" to="." method="blink"]
+[connection signal="timeout" from="LegsMesh/WalkTimer" to="." method="step"]

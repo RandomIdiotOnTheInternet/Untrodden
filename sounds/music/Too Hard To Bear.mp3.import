@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://crdlubdd00ndd"
+path="res://.godot/imported/Too Hard To Bear.mp3-24900749eedfec6793be78ef02309798.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/Too Hard To Bear.mp3"
+dest_files=["res://.godot/imported/Too Hard To Bear.mp3-24900749eedfec6793be78ef02309798.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

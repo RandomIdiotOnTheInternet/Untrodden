@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c71ydjfn3lve3"]
+
+[ext_resource type="Script" uid="uid://cnikdhhyt7o83" path="res://scripts/UI/internet_bridge.gd" id="1_nokby"]
+
+[node name="InternetBridge" type="CefTexture" unique_id=372231020]
+url = ""
+visible = false
+custom_minimum_size = Vector2(0, 567)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_position = Vector2(0, 100)
+mouse_filter = 0
+script = ExtResource("1_nokby")
+
+[connection signal="cookies_received" from="." to="." method="_on_cookies_received"]
+[connection signal="url_changed" from="." to="." method="_on_url_changed"]

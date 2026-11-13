@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cf20nudop2n21"
+path="res://.godot/imported/Quintuple Burger (Chef's Theme).mp3-9b1ae5cb482bb0b05df667c846865529.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/Quintuple Burger (Chef's Theme).mp3"
+dest_files=["res://.godot/imported/Quintuple Burger (Chef's Theme).mp3-9b1ae5cb482bb0b05df667c846865529.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

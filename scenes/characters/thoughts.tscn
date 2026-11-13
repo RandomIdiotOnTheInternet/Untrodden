@@ -1,0 +1,254 @@
+[gd_scene format=3 uid="uid://cghl0n2wcpn3k"]
+
+[ext_resource type="Script" uid="uid://htgqrc2hw862" path="res://scripts/characters/thoughts.gd" id="1_3robh"]
+[ext_resource type="SpriteFrames" uid="uid://4r56cf0lt7dn" path="res://resources/thoughtFrames.tres" id="2_jmv6n"]
+[ext_resource type="Material" uid="uid://7jb5n8q60fqp" path="res://resources/materials/thought_material.tres" id="3_jmv6n"]
+[ext_resource type="AudioStream" uid="uid://clnqqx854e7r7" path="res://sounds/sfx/talking_sounds/quick_1.ogg" id="4_dfqxw"]
+[ext_resource type="PackedScene" uid="uid://c7cmjg6bwlc5" path="res://scenes/UI/revealing_text.tscn" id="4_xsmrw"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jmv6n"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="SphereMesh" id="SphereMesh_3robh"]
+resource_local_to_scene = true
+material = ExtResource("3_jmv6n")
+
+[sub_resource type="PrismMesh" id="PrismMesh_jmv6n"]
+size = Vector3(1, 1, 0.01)
+
+[sub_resource type="Animation" id="Animation_jmv6n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ThoughtMesh:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 0.01)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ThoughtSprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.01, 0.01, 0.01)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ThoughtSprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ThoughtSprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.5, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ThoughtSprite:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dfqxw"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ThoughtSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.01, 0.01, 0.01), Vector3(0.25, 0.25, 0.25)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ThoughtSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ThoughtSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -0.5, 0), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ThoughtSprite:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xsmrw"]
+resource_name = "new_animation"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ThoughtSprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.25, 0.25, 0.25), Vector3(0.01, 0.01, 0.01)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ThoughtSprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ThoughtSprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.5, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ThoughtSprite:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dfqxw"]
+_data = {
+&"RESET": SubResource("Animation_jmv6n"),
+&"fade_in": SubResource("Animation_dfqxw"),
+&"fade_out": SubResource("Animation_xsmrw")
+}
+
+[node name="Thoughts" type="PathFollow3D" unique_id=2126380423]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+rotation_mode = 0
+loop = false
+script = ExtResource("1_3robh")
+dialogue_sound = ExtResource("4_dfqxw")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=35761611]
+transparent_bg = true
+
+[node name="ThoughtSprite" type="AnimatedSprite2D" parent="SubViewport" unique_id=209611297]
+position = Vector2(255, 258)
+sprite_frames = ExtResource("2_jmv6n")
+autoplay = "default"
+frame_progress = 0.09461247
+
+[node name="ThoughtText" parent="SubViewport/ThoughtSprite" unique_id=657346729 instance=ExtResource("4_xsmrw")]
+unique_name_in_owner = true
+
+[node name="ThoughtSprite" type="Sprite3D" parent="." unique_id=1618108101]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, -0.5, 0)
+visible = false
+billboard = 1
+texture = SubResource("ViewportTexture_jmv6n")
+
+[node name="ThoughtMesh" type="MeshInstance3D" parent="." unique_id=1850555552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.01, 0, 0, 0)
+visible = false
+cast_shadow = 0
+mesh = SubResource("SphereMesh_3robh")
+
+[node name="DialogueArrow" type="MeshInstance3D" parent="ThoughtMesh" unique_id=202669918]
+unique_name_in_owner = true
+transform = Transform3D(-1.3113416e-08, 0.3, -1.3113418e-08, -0.3, -1.3113417e-08, -1.3113416e-08, -1.3113417e-06, 1.3113417e-06, 30.000002, 0.43932673, -0.3188042, 1.8157024)
+visible = false
+cast_shadow = 0
+mesh = SubResource("PrismMesh_jmv6n")
+skeleton = NodePath("../..")
+
+[node name="ThoughtText" type="Label3D" parent="ThoughtMesh" unique_id=781350267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.279175e-10, 0, 1.4465077)
+visible = false
+text = "I'll code more games..."
+autowrap_mode = 2
+width = 150.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1633352618]
+libraries/ = SubResource("AnimationLibrary_dfqxw")
+
+[node name="WaitingTimer" type="Timer" parent="." unique_id=639737958]
+one_shot = true
+
+[connection signal="finishedRevealing" from="SubViewport/ThoughtSprite/ThoughtText" to="." method="dialogue_finish"]

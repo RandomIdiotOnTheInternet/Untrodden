@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://q0ji8sf2532o"]
+
+[ext_resource type="Texture2D" uid="uid://bhut8ft7doig4" path="res://ambientcg/extracted/Road008A_1K-JPG/Road008A_1K-JPG_Color.jpg" id="1_qc8hm"]
+[ext_resource type="Texture2D" uid="uid://byjbbuccuqket" path="res://ambientcg/extracted/Road008A_1K-JPG/Road008A_1K-JPG_AmbientOcclusion.jpg" id="2_b2bo0"]
+[ext_resource type="Texture2D" uid="uid://uoth1t148i7x" path="res://ambientcg/extracted/Road008A_1K-JPG/Road008A_1K-JPG_Displacement.jpg" id="3_0lfmv"]
+[ext_resource type="Texture2D" uid="uid://td40hbtmfmq5" path="res://ambientcg/extracted/Road008A_1K-JPG/Road008A_1K-JPG_NormalGL.jpg" id="4_taww0"]
+[ext_resource type="Texture2D" uid="uid://cenqum0v434rj" path="res://ambientcg/extracted/Road008A_1K-JPG/Road008A_1K-JPG_Roughness.jpg" id="5_n5dsr"]
+
+[resource]
+albedo_texture = ExtResource("1_qc8hm")
+roughness_texture = ExtResource("5_n5dsr")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("4_taww0")
+ao_enabled = true
+ao_texture = ExtResource("2_b2bo0")
+ao_texture_channel = 4
+heightmap_enabled = true
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("3_0lfmv")
+uv1_triplanar = true

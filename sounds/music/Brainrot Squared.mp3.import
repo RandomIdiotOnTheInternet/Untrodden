@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://5jrodyostxew"
+path="res://.godot/imported/Brainrot Squared.mp3-48628bc19661767a451bc820a6707f39.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/Brainrot Squared.mp3"
+dest_files=["res://.godot/imported/Brainrot Squared.mp3-48628bc19661767a451bc820a6707f39.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

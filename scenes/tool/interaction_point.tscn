@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dw2i0vkqcdu47"]
+
+[ext_resource type="Script" uid="uid://dvk6a3in1c1ri" path="res://scripts/tool/interaction_point.gd" id="1_jf3ko"]
+[ext_resource type="FontFile" uid="uid://iyvfdycgyiej" path="res://resources/fonts/Pixelated Elegance/TrueType (.ttf)/Pixelated Elegance.ttf" id="2_te4o2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jf3ko"]
+size = Vector3(0.5, 1, 0.5)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_te4o2"]
+viewport_path = NodePath("InteractionDisplay/SubViewport")
+
+[node name="InteractionPoint" type="Node3D" unique_id=943169738]
+top_level = true
+script = ExtResource("1_jf3ko")
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=1021838224]
+collision_layer = 0
+collision_mask = 384
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=26211562]
+shape = SubResource("BoxShape3D_jf3ko")
+debug_color = Color(1, 0.6, 0.16862746, 0.41960785)
+
+[node name="InteractionDisplay" type="Sprite3D" parent="." unique_id=1746703590]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+visible = false
+billboard = 1
+no_depth_test = true
+texture = SubResource("ViewportTexture_te4o2")
+
+[node name="SubViewport" type="SubViewport" parent="InteractionDisplay" unique_id=1523461730]
+transparent_bg = true
+
+[node name="InteractionLabel" type="RichTextLabel" parent="InteractionDisplay/SubViewport" unique_id=876482204]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_separation = -10
+theme_override_fonts/normal_font = ExtResource("2_te4o2")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "Enter Fattie's
+[img]res://assets/images/UI/Keyboard & Mouse/Default/keyboard_shift.png[/img]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="InteractionArea" to="." method="entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="exited"]

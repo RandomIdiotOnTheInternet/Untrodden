@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="BodyMeshLibrary" format=3 uid="uid://cskj6eow3qv8p"]
+
+[ext_resource type="Script" uid="uid://bq78578v07lol" path="res://scripts/tool/body_mesh_library.gd" id="1_cdcmn"]
+[ext_resource type="MeshLibrary" uid="uid://b7qjmx758e72e" path="res://vox/people/torsos/torso_generic_male_1.vox" id="1_vc8ac"]
+[ext_resource type="MeshLibrary" uid="uid://dxpmodj8qqrk" path="res://vox/people/torsos/torso_generic_male_2.vox" id="2_03ywd"]
+[ext_resource type="MeshLibrary" uid="uid://c7yg2sclir5o6" path="res://vox/people/torsos/torso_generic_male_3.vox" id="3_dd256"]
+[ext_resource type="MeshLibrary" uid="uid://fvpqi4betsye" path="res://vox/people/torsos/torso_generic_male_4.vox" id="4_h4o5f"]
+[ext_resource type="MeshLibrary" uid="uid://bjgkoigtkuqwg" path="res://vox/people/torsos/torso_generic_male_5.vox" id="5_gincm"]
+[ext_resource type="MeshLibrary" uid="uid://nwsq3mig333o" path="res://vox/people/torsos/torso_generic_male_6.vox" id="6_2fl6d"]
+[ext_resource type="MeshLibrary" uid="uid://cpqklemwo0n7r" path="res://vox/people/torsos/torso_generic_male_7.vox" id="7_158k1"]
+
+[resource]
+script = ExtResource("1_cdcmn")
+libraries = Array[MeshLibrary]([ExtResource("1_vc8ac"), ExtResource("2_03ywd"), ExtResource("3_dd256"), ExtResource("4_h4o5f"), ExtResource("5_gincm"), ExtResource("6_2fl6d"), ExtResource("7_158k1")])
+metadata/_custom_type_script = "uid://bq78578v07lol"

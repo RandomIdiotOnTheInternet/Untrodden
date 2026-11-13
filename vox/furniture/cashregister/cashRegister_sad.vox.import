@@ -1,0 +1,17 @@
+[remap]
+
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
+uid="uid://b2r5gjhcr3fxg"
+path="res://.godot/imported/cashRegister_sad.vox-479e5842a1cec2b78ebe3ded8f7d2dfe.meshlib"
+
+[deps]
+
+source_file="res://vox/furniture/cashregister/cashRegister_sad.vox"
+dest_files=["res://.godot/imported/cashRegister_sad.vox-479e5842a1cec2b78ebe3ded8f7d2dfe.meshlib"]
+
+[params]
+
+Scale=0.1
+GreedyMeshGenerator=true
+SnapToGround=false

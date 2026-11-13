@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://big3vytoxq4vd"]
+
+[ext_resource type="PackedScene" uid="uid://byjfm2xwsd06i" path="res://scenes/world/Models/house_model.tscn" id="1_jbtsj"]
+[ext_resource type="PackedScene" uid="uid://gt2ug82ek4us" path="res://scenes/player/main_character.tscn" id="2_jmbnr"]
+[ext_resource type="PackedScene" uid="uid://ddsthje72cbdv" path="res://scenes/tool/story_point.tscn" id="3_bf3fq"]
+[ext_resource type="Script" uid="uid://bchmrinehxpk5" path="res://resources/custom_resources/story_action.gd" id="4_c8wjl"]
+
+[sub_resource type="Resource" id="Resource_bf3fq"]
+script = ExtResource("4_c8wjl")
+actionType = 3
+modifiers = ["...What should I do?", 3]
+metadata/_custom_type_script = "uid://bchmrinehxpk5"
+
+[sub_resource type="Resource" id="Resource_3a51l"]
+script = ExtResource("4_c8wjl")
+actionType = 1
+modifiers = [3]
+aditional_action = SubResource("Resource_bf3fq")
+metadata/_custom_type_script = "uid://bchmrinehxpk5"
+
+[node name="house_generic_nighttime" type="Node3D" unique_id=1638836079]
+
+[node name="HouseModel" parent="." unique_id=1170753037 instance=ExtResource("1_jbtsj")]
+
+[node name="MainCharacter" parent="." unique_id=1235798244 instance=ExtResource("2_jmbnr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6649754, 0.2546386, 1.0100766)
+
+[node name="StoryPoint" parent="." unique_id=1189813509 instance=ExtResource("3_bf3fq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88101065, 1.0798064, 0.8655812)
+this_story_action = SubResource("Resource_3a51l")

@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://byjfm2xwsd06i"]
+
+[ext_resource type="ArrayMesh" uid="uid://iyw3dxegnudk" path="res://vox/furniture/Chair.vox" id="1_4hdwh"]
+[ext_resource type="Texture2D" uid="uid://c8i7c55crirfs" path="res://ambientcg/extracted/Asphalt031_1K-JPG/Asphalt031_1K-JPG_Color.jpg" id="1_8l0w1"]
+[ext_resource type="ArrayMesh" uid="uid://b3qir3vgkl36r" path="res://vox/furniture/table.vox" id="2_rsqmh"]
+[ext_resource type="PackedScene" uid="uid://c7gvmeuvct1kj" path="res://scenes/furntiture/television.tscn" id="3_rsqmh"]
+[ext_resource type="ArrayMesh" uid="uid://bsef6lboet1l7" path="res://vox/furniture/Bed.vox" id="4_yjouu"]
+[ext_resource type="ArrayMesh" uid="uid://uwj1h0qvme6l" path="res://vox/furniture/door.vox" id="5_gq5gn"]
+[ext_resource type="PackedScene" uid="uid://ctf0w8ekbkaxg" path="res://scenes/furntiture/window.tscn" id="6_iexic"]
+[ext_resource type="ArrayMesh" uid="uid://dipt8cfgggfkj" path="res://vox/furniture/couch.vox" id="8_gha6n"]
+[ext_resource type="PackedScene" uid="uid://dlew4dsw8xgfq" path="res://scenes/furntiture/clock.tscn" id="9_nw8ny"]
+[ext_resource type="PackedScene" uid="uid://bbjymevbmimvw" path="res://scenes/furntiture/streetlight.tscn" id="10_8l0w1"]
+[ext_resource type="Environment" uid="uid://citreuac4jr0k" path="res://resources/environments/interior_darkness.tres" id="11_wwjwl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4b11c"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.38321832, 0.38321835, 0.38321832, 1)
+normal_enabled = true
+normal_scale = 0.25
+normal_texture = ExtResource("1_8l0w1")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_xjk2c"]
+material = SubResource("StandardMaterial3D_4b11c")
+size = Vector3(6, 0.5, 2.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8l0w1"]
+points = PackedVector3Array(-1.6, -1.1, -1.6, -1.6, -1.1, 1.6, -1.6, 1.3000001, -1.6, 1.6, -1.1, -1.6, -1.6, 1.3000001, 1.6, 1.6, -1.1, 1.6, 1.6, 1.3000001, -1.6, 1.6, 1.3000001, 1.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o068a"]
+size = Vector3(10, 0.5, 10)
+
+[node name="HouseModel" type="StaticBody3D" unique_id=1393507213]
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=1057662040]
+mesh = SubResource("BoxMesh_xjk2c")
+
+[node name="Chair" type="MeshInstance3D" parent="." unique_id=832170374]
+transform = Transform3D(0.24148145, 0, -0.06470476, 0, 0.25, 0, 0.06470476, 0, 0.24148145, 0, 0.41, -0.38227594)
+mesh = ExtResource("1_4hdwh")
+
+[node name="Table" type="MeshInstance3D" parent="." unique_id=952037214]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.46882117, 0.16997242)
+mesh = ExtResource("2_rsqmh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Table" unique_id=1945114767]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Table/StaticBody3D" unique_id=60719175]
+shape = SubResource("ConvexPolygonShape3D_8l0w1")
+
+[node name="Television" parent="." unique_id=208051834 instance=ExtResource("3_rsqmh")]
+transform = Transform3D(0, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, 0, -0.91104114, 0.25015545, -0.6489433)
+
+[node name="Bed" type="MeshInstance3D" parent="." unique_id=1969711783]
+transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, -2.030935, 0.4, 0.062333345)
+mesh = ExtResource("4_yjouu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=391032073]
+shape = SubResource("BoxShape3D_o068a")
+
+[node name="Door" type="MeshInstance3D" parent="." unique_id=1221369651]
+transform = Transform3D(-1.0927847e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.0927847e-08, 3.1489415, 0.65, 0.8156377)
+mesh = ExtResource("5_gq5gn")
+
+[node name="Window" parent="." unique_id=1468717188 instance=ExtResource("6_iexic")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2, 0.49278927, -1.5010676)
+
+[node name="Window2" parent="." unique_id=694985351 instance=ExtResource("6_iexic")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.3270226, 0.51536584, -1.5510511)
+
+[node name="Couch" type="MeshInstance3D" parent="." unique_id=118361853]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.0999792, 0.39999998, -0.92899084)
+mesh = ExtResource("8_gha6n")
+
+[node name="Clock" parent="." unique_id=612694989 instance=ExtResource("9_nw8ny")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.80041885, -1.515686)
+
+[node name="Streetlight" parent="." unique_id=1547773564 instance=ExtResource("10_8l0w1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15928257, 1, 0)
+on = true
+pole_visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1588079465]
+environment = ExtResource("11_wwjwl")

@@ -1,0 +1,331 @@
+[gd_scene format=3 uid="uid://b7d34elkj24wb"]
+
+[ext_resource type="Script" uid="uid://i1dxkxc68um1" path="res://scripts/UI/main_menu.gd" id="1_e2p27"]
+[ext_resource type="Texture2D" uid="uid://vu0gkqrdk3eh" path="res://assets/images/Logo.jpg" id="1_qwnig"]
+[ext_resource type="StyleBox" uid="uid://csslvvcid1mxj" path="res://resources/themes/dark_glass_pannel.tres" id="2_5jstl"]
+[ext_resource type="Script" uid="uid://dmn52hjovsovi" path="res://scripts/tool/cutscene.gd" id="2_d6l81"]
+[ext_resource type="StyleBox" uid="uid://xh65pwbqu0w4" path="res://resources/themes/dark_glass_pannel_pressed.tres" id="3_e2p27"]
+[ext_resource type="StyleBox" uid="uid://dai3eijamfyqm" path="res://resources/themes/dark_glass_pannel_hover.tres" id="3_tfcbk"]
+[ext_resource type="PackedScene" uid="uid://cxd3odg5s4scp" path="res://scenes/tool/cutscene_player.tscn" id="7_mf7fl"]
+[ext_resource type="Texture2D" uid="uid://dyyep42nxyhtu" path="res://assets/images/aSingularBlackPixel.png" id="8_d6l81"]
+[ext_resource type="Script" uid="uid://c1irdit10ydy4" path="res://scripts/tool/dialogue.gd" id="8_mf7fl"]
+[ext_resource type="AudioStream" uid="uid://c5xf52va5nwht" path="res://sounds/sfx/talking_sounds/quick_3.ogg" id="9_d6l81"]
+[ext_resource type="PackedScene" uid="uid://blf17ltu5xenx" path="res://scenes/UI/player_UI.tscn" id="10_mf7fl"]
+
+[sub_resource type="Resource" id="Resource_d6l81"]
+script = ExtResource("2_d6l81")
+cutscene_id = &"startup_1"
+metadata/_custom_type_script = "uid://dmn52hjovsovi"
+
+[sub_resource type="Animation" id="Animation_e2p27"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainButtons:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BG:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-192, -188)]
+}
+
+[sub_resource type="Animation" id="Animation_ngj32"]
+resource_name = "title_screen_fade_in"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2.0333333, 3.0333333, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-192, -100), Vector2(-192, -150), Vector2(-192, -170), Vector2(-192, -180), Vector2(-192, -188)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BG:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MainButtons:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bm8t2"]
+_data = {
+&"RESET": SubResource("Animation_e2p27"),
+&"title_screen_fade_in": SubResource("Animation_ngj32")
+}
+
+[sub_resource type="Animation" id="Animation_um6dh"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainButtons:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Resource" id="Resource_a1wsg"]
+script = ExtResource("8_mf7fl")
+text = "[color=dark_gray]*You hear a soft voice.*"
+left_portrait = ExtResource("8_d6l81")
+right_portrait = ExtResource("8_d6l81")
+text_sound = ExtResource("9_d6l81")
+horizontal_alignment = 1
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_i7p8e"]
+script = ExtResource("8_mf7fl")
+text = "[color=dark_gray]Hello."
+horizontal_alignment = 1
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_sfthw"]
+script = ExtResource("8_mf7fl")
+text = "[color=dark_gray]You don't know me, but I know you well."
+horizontal_alignment = 1
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_n3ahy"]
+script = ExtResource("8_mf7fl")
+text = "[color=dark_red][font_size=16](One could even say - too well).[/font_size][/color][color=dark_gray]"
+reset_text = false
+horizontal_alignment = 1
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Animation" id="Animation_i7p8e"]
+resource_name = "startup_1"
+length = 1.3
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutscenePlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.8333333, 0.93333334, 1.0333333, 1.1333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [SubResource("Resource_a1wsg"), true],
+"method": &"new_dialogue"
+}, {
+"args": [SubResource("Resource_i7p8e"), true],
+"method": &"new_dialogue"
+}, {
+"args": [SubResource("Resource_sfthw"), true],
+"method": &"new_dialogue"
+}, {
+"args": [SubResource("Resource_n3ahy"), true],
+"method": &"new_dialogue"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.2666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"fade_in"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BG:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MainButtons:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sfthw"]
+_data = {
+&"RESET": SubResource("Animation_um6dh"),
+&"startup_1": SubResource("Animation_i7p8e")
+}
+
+[node name="MainMenu" type="Control" unique_id=1248774464]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e2p27")
+startup_cutscene = SubResource("Resource_d6l81")
+
+[node name="BGColor" type="ColorRect" parent="." unique_id=1721564980]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.312
+anchor_top = -1.245
+anchor_right = 2.4180002
+anchor_bottom = 2.644
+offset_left = -0.57592773
+offset_top = -0.23999023
+offset_right = -0.5361328
+offset_bottom = -0.31201172
+color = Color(0, 0, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=689144814]
+position = Vector2(-203, -145)
+anchor_mode = 0
+zoom = Vector2(0.75, 0.75)
+
+[node name="BG" type="TextureRect" parent="." unique_id=2125966229]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -768.0
+offset_top = -512.0
+offset_right = 768.0
+offset_bottom = 512.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qwnig")
+
+[node name="MainButtons" type="VBoxContainer" parent="." unique_id=943594501]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.41300002
+anchor_top = 0.5822222
+anchor_right = 0.587
+anchor_bottom = 0.9364074
+offset_left = 0.2239685
+offset_top = 29.720001
+offset_right = -0.22399902
+offset_bottom = -29.792023
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Play" type="Button" parent="MainButtons" unique_id=2115220781]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("2_5jstl")
+theme_override_styles/pressed = ExtResource("3_e2p27")
+theme_override_styles/hover = ExtResource("3_tfcbk")
+text = "Begin"
+
+[node name="Settings" type="Button" parent="MainButtons" unique_id=1068316626]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("2_5jstl")
+theme_override_styles/pressed = ExtResource("3_e2p27")
+theme_override_styles/hover = ExtResource("3_tfcbk")
+text = "Settings"
+
+[node name="Exit" type="Button" parent="MainButtons" unique_id=1441929588]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("2_5jstl")
+theme_override_styles/pressed = ExtResource("3_e2p27")
+theme_override_styles/hover = ExtResource("3_tfcbk")
+text = "Leave"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1283397622]
+libraries/ = SubResource("AnimationLibrary_bm8t2")
+
+[node name="CutscenePlayer" parent="." unique_id=1871030014 instance=ExtResource("7_mf7fl")]
+libraries/ = SubResource("AnimationLibrary_sfthw")
+
+[node name="PlayerUI" parent="." unique_id=1749572904 instance=ExtResource("10_mf7fl")]
+layout_mode = 1
+
+[node name="StoryText" parent="PlayerUI/StoryTextUI" parent_id_path=PackedInt32Array(1749572904, 1665198591) index="0" unique_id=657346729]
+anchors_preset = -1
+
+[node name="ScreenNoticeLabel" parent="PlayerUI" index="4" unique_id=546250702]
+anchors_preset = -1
+
+[connection signal="pressed" from="MainButtons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MainButtons/Exit" to="." method="_on_exit_pressed"]
+
+[editable path="PlayerUI"]

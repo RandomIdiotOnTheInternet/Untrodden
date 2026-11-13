@@ -1,0 +1,81 @@
+[gd_resource type="Resource" script_class="Decision" format=3 uid="uid://d0f3ehpbvqip0"]
+
+[ext_resource type="Script" uid="uid://bjploipt1rv4x" path="res://scripts/tool/decision_option.gd" id="1_11pi6"]
+[ext_resource type="Script" uid="uid://bbjbc8ebh4u8e" path="res://scripts/tool/data_holder.gd" id="2_itojp"]
+[ext_resource type="Script" uid="uid://c5p7diksqo6j" path="res://scripts/tool/decision.gd" id="3_fqkna"]
+[ext_resource type="Script" uid="uid://dmn52hjovsovi" path="res://scripts/tool/cutscene.gd" id="3_itojp"]
+
+[sub_resource type="Resource" id="Resource_iu15w"]
+script = ExtResource("3_fqkna")
+metadata/_custom_type_script = "uid://c5p7diksqo6j"
+
+[sub_resource type="Resource" id="Resource_atmah"]
+script = ExtResource("3_itojp")
+cutscene_id = &"order_food-2"
+metadata/_custom_type_script = "uid://dmn52hjovsovi"
+
+[sub_resource type="Resource" id="Resource_0axh3"]
+script = ExtResource("2_itojp")
+value = "-20"
+description = "[color=red]-20$"
+metadata/_custom_type_script = "uid://bbjbc8ebh4u8e"
+
+[sub_resource type="Resource" id="Resource_17ajl"]
+script = ExtResource("2_itojp")
+value = "10"
+description = "[color=blue] +10 Energy"
+metadata/_custom_type_script = "uid://bbjbc8ebh4u8e"
+
+[sub_resource type="Resource" id="Resource_3n7kp"]
+script = ExtResource("3_itojp")
+cutscene_id = &"order_food-fries"
+metadata/_custom_type_script = "uid://dmn52hjovsovi"
+
+[sub_resource type="Resource" id="Resource_fyudl"]
+script = ExtResource("1_11pi6")
+cutscene = SubResource("Resource_3n7kp")
+ccp_cutscene = SubResource("Resource_atmah")
+decision_description = "Order fries"
+decision_reasoning = "[color=dark_gray]\"Man, fries sound pretty good about now... they're also quite cheap. For Fattie's food, anyway.\""
+costs = Array[ExtResource("2_itojp")]([SubResource("Resource_0axh3"), SubResource("Resource_17ajl")])
+metadata/_custom_type_script = "uid://bjploipt1rv4x"
+
+[sub_resource type="Resource" id="Resource_itojp"]
+script = ExtResource("3_itojp")
+cutscene_id = &"order_food-2"
+metadata/_custom_type_script = "uid://dmn52hjovsovi"
+
+[sub_resource type="Resource" id="Resource_lsxyv"]
+script = ExtResource("2_itojp")
+description = "[color=red]-25$"
+metadata/_custom_type_script = "uid://bbjbc8ebh4u8e"
+
+[sub_resource type="Resource" id="Resource_vppg3"]
+script = ExtResource("2_itojp")
+description = "[color=blue]+20 Energy"
+metadata/_custom_type_script = "uid://bbjbc8ebh4u8e"
+
+[sub_resource type="Resource" id="Resource_yh7ap"]
+script = ExtResource("2_itojp")
+description = "[color=gray]+?"
+metadata/_custom_type_script = "uid://bbjbc8ebh4u8e"
+
+[sub_resource type="Resource" id="Resource_cyphb"]
+script = ExtResource("3_itojp")
+cutscene_id = &"order_food-saucy_special"
+metadata/_custom_type_script = "uid://dmn52hjovsovi"
+
+[sub_resource type="Resource" id="Resource_rw20p"]
+script = ExtResource("1_11pi6")
+cutscene = SubResource("Resource_cyphb")
+ccp_cutscene = SubResource("Resource_itojp")
+decision_description = "Order the special"
+decision_reasoning = "[color=dark_gray]\"Mmm... a five layer cheeseburger, with different cheese in every layer... my mouth waters just thinking of it.\""
+costs = Array[ExtResource("2_itojp")]([SubResource("Resource_lsxyv"), SubResource("Resource_vppg3"), SubResource("Resource_yh7ap")])
+metadata/_custom_type_script = "uid://bjploipt1rv4x"
+
+[resource]
+script = ExtResource("3_fqkna")
+options = Array[ExtResource("1_11pi6")]([SubResource("Resource_fyudl"), SubResource("Resource_rw20p")])
+deeper_decision = SubResource("Resource_iu15w")
+metadata/_custom_type_script = "uid://c5p7diksqo6j"

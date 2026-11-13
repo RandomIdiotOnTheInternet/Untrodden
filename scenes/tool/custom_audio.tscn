@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c78gk5j221fpw"]
+
+[ext_resource type="Script" uid="uid://dsccy42550u7f" path="res://scripts/tool/custom_audio.gd" id="2_lmhvc"]
+
+[node name="Custom Audio" type="AudioStreamPlayer3D" unique_id=1957224132]
+script = ExtResource("2_lmhvc")
+metadata/_custom_type_script = "uid://y8x4svl5kej2"
+
+[node name="Timer" type="Timer" parent="." unique_id=1051348662]
+wait_time = 0.5
+
+[connection signal="timeout" from="Timer" to="." method="trigger"]

@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="BmailData" format=3 uid="uid://d1s1blkj38vrb"]
+
+[ext_resource type="Script" uid="uid://bhv7rst7eb3dk" path="res://scripts/UI/BmailData.gd" id="1_hur4e"]
+[ext_resource type="Script" uid="uid://bjploipt1rv4x" path="res://scripts/tool/decision_option.gd" id="1_jp2uy"]
+[ext_resource type="Script" uid="uid://bbjbc8ebh4u8e" path="res://scripts/tool/data_holder.gd" id="2_d17h6"]
+[ext_resource type="Resource" uid="uid://8k7k5kpwangx" path="res://resources/custom_resources/story/bmails/bmail_reply.tres" id="3_d17h6"]
+[ext_resource type="Script" uid="uid://c5p7diksqo6j" path="res://scripts/tool/decision.gd" id="3_pi5l1"]
+
+[sub_resource type="Resource" id="Resource_qpont"]
+script = ExtResource("1_jp2uy")
+cutscene = ExtResource("3_d17h6")
+decision_description = "Repond professionally"
+decision_result = "Don't message this address unless if you have a suggestion for the paper or an issue to report.
+Sincerely, What's-New-News."
+metadata/_custom_type_script = "uid://bjploipt1rv4x"
+
+[sub_resource type="Resource" id="Resource_ke5y3"]
+script = ExtResource("1_jp2uy")
+cutscene = ExtResource("3_d17h6")
+decision_description = "Talk to a stranger"
+decision_result = "Hi.
+I'm lonely too. My name's George, what's yours?"
+metadata/_custom_type_script = "uid://bjploipt1rv4x"
+
+[sub_resource type="Resource" id="Resource_q55j7"]
+script = ExtResource("3_pi5l1")
+options = Array[ExtResource("1_jp2uy")]([SubResource("Resource_qpont"), SubResource("Resource_ke5y3")])
+metadata/_custom_type_script = "uid://c5p7diksqo6j"
+
+[resource]
+script = ExtResource("1_hur4e")
+subject = "Hello?"
+inbound_body = "I'm sorry to bother you. I'm just very lonely, and I heard from the paper that you dears keep your company free from those strange new email robots. My husband passed away 12 years ago, and I don't really know anyone else than him. I just wanted to talk to a human being for a moment. What's your name?"
+decision = SubResource("Resource_q55j7")
+metadata/_custom_type_script = "uid://bhv7rst7eb3dk"

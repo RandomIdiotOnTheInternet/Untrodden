@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://cr55lshgunwpt"]
+
+[ext_resource type="StyleBox" uid="uid://dyuebbwca0s8x" path="res://resources/themes/dark_panel.tres" id="1_wxkyv"]
+[ext_resource type="StyleBox" uid="uid://cgdm2tr0pqiwc" path="res://resources/themes/dark_panel_pressed.tres" id="2_iwxwy"]
+[ext_resource type="StyleBox" uid="uid://br5y54y23lu7o" path="res://resources/themes/dark_panel_hover.tres" id="3_aifg0"]
+[ext_resource type="StyleBox" uid="uid://b1tnled45yle5" path="res://resources/themes/dark_panel_disabled.tres" id="4_n4ye1"]
+[ext_resource type="Script" uid="uid://cyxc4a7qrj7or" path="res://scripts/UI/fun_decision_button.gd" id="5_iwxwy"]
+
+[node name="FunDecision" type="Button" unique_id=1748483370]
+custom_minimum_size = Vector2(160, 160)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_left = NodePath("../Decision3")
+focus_neighbor_right = NodePath("../Decision2")
+mouse_behavior_recursive = 2
+theme_override_styles/normal = ExtResource("1_wxkyv")
+theme_override_styles/pressed = ExtResource("2_iwxwy")
+theme_override_styles/hover = ExtResource("3_aifg0")
+theme_override_styles/disabled = ExtResource("4_n4ye1")
+autowrap_mode = 2
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("5_iwxwy")
+
+[node name="ButtonLabel" type="RichTextLabel" parent="." unique_id=79038764]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[wave]yooooo"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CostPanel" type="Panel" parent="." unique_id=1921652121]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.125
+anchor_top = -0.88167983
+anchor_right = 1.11875
+anchor_bottom = -0.0022795154
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("1_wxkyv")
+metadata/_edit_use_anchors_ = true
+
+[node name="CostText" type="RichTextLabel" parent="CostPanel" unique_id=1350134019]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[color=dark_blue]+Money
+[color=dark_red]-Time
+[color=dark_gray]+?"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1

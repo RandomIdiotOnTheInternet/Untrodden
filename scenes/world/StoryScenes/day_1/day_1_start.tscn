@@ -1,0 +1,181 @@
+[gd_scene format=3 uid="uid://ypdywt5aa607"]
+
+[ext_resource type="PackedScene" uid="uid://byjfm2xwsd06i" path="res://scenes/world/Models/house_model.tscn" id="1_i56xj"]
+[ext_resource type="PackedScene" uid="uid://gt2ug82ek4us" path="res://scenes/player/main_character.tscn" id="2_2vykc"]
+[ext_resource type="Script" uid="uid://dmn52hjovsovi" path="res://scripts/tool/cutscene.gd" id="3_4b11c"]
+[ext_resource type="PackedScene" uid="uid://ddsthje72cbdv" path="res://scenes/tool/story_point.tscn" id="3_ei60f"]
+[ext_resource type="Script" uid="uid://bchmrinehxpk5" path="res://resources/custom_resources/story_action.gd" id="4_hb8yy"]
+[ext_resource type="PackedScene" uid="uid://dw2i0vkqcdu47" path="res://scenes/tool/interaction_point.tscn" id="5_k3wyl"]
+[ext_resource type="PackedScene" uid="uid://cxd3odg5s4scp" path="res://scenes/tool/cutscene_player.tscn" id="6_4g14b"]
+[ext_resource type="Texture2D" uid="uid://5o4px2lccjox" path="res://assets/images/portraits/player/player_sad.png" id="7_hd1ed"]
+[ext_resource type="Texture2D" uid="uid://dyyep42nxyhtu" path="res://assets/images/aSingularBlackPixel.png" id="8_4b11c"]
+[ext_resource type="Script" uid="uid://c1irdit10ydy4" path="res://scripts/tool/dialogue.gd" id="9_pg5ij"]
+[ext_resource type="AudioStream" uid="uid://b1gyedgldb3c" path="res://sounds/sfx/talking_sounds/male_standard_2.ogg" id="10_l27cr"]
+[ext_resource type="AudioStream" uid="uid://c5xf52va5nwht" path="res://sounds/sfx/talking_sounds/quick_3.ogg" id="12_gix20"]
+[ext_resource type="Texture2D" uid="uid://d1rqevyy3mvoh" path="res://assets/images/portraits/player/player_thinking.png" id="13_hd1ed"]
+[ext_resource type="Texture2D" uid="uid://hgognsse1pbq" path="res://assets/images/portraits/player/player_neutral.png" id="14_4b11c"]
+
+[sub_resource type="Resource" id="Resource_0d2px"]
+script = ExtResource("4_hb8yy")
+actionType = 9
+modifiers = [1]
+metadata/_custom_type_script = "uid://bchmrinehxpk5"
+
+[sub_resource type="Resource" id="Resource_gix20"]
+script = ExtResource("3_4b11c")
+cutscene_id = &"start"
+metadata/_custom_type_script = "uid://dmn52hjovsovi"
+
+[sub_resource type="Resource" id="Resource_ova1q"]
+script = ExtResource("3_4b11c")
+cutscene_id = &"to_void_demo"
+metadata/_custom_type_script = "uid://dmn52hjovsovi"
+
+[sub_resource type="Resource" id="Resource_ofmon"]
+script = ExtResource("9_pg5ij")
+text = "I need to get up..."
+left_portrait = ExtResource("13_hd1ed")
+right_portrait = ExtResource("8_4b11c")
+text_sound = ExtResource("10_l27cr")
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_qv1xp"]
+script = ExtResource("9_pg5ij")
+text = "Cmon, idiot. Get up. On your feet. It's time to work."
+left_portrait = ExtResource("7_hd1ed")
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_fgym7"]
+script = ExtResource("9_pg5ij")
+text = "With much difficulty, you stand up."
+left_portrait = ExtResource("8_4b11c")
+right_portrait = ExtResource("8_4b11c")
+text_sound = ExtResource("12_gix20")
+horizontal_alignment = 1
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_4b11c"]
+script = ExtResource("9_pg5ij")
+text = "No time for breakfast. I'm already late."
+left_portrait = ExtResource("14_4b11c")
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_pg5ij"]
+script = ExtResource("9_pg5ij")
+text = "...Not that there's much to eat anyway."
+left_portrait = ExtResource("13_hd1ed")
+waits = false
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_l27cr"]
+script = ExtResource("4_hb8yy")
+actionType = 0
+modifiers = [1]
+metadata/_custom_type_script = "uid://bchmrinehxpk5"
+
+[sub_resource type="Animation" id="Animation_hippb"]
+resource_name = "start"
+length = 7.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutscenePlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.0333333, 2.0666666, 2.1, 2.1333334, 2.1666667, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [SubResource("Resource_ofmon"), true],
+"method": &"new_dialogue"
+}, {
+"args": [SubResource("Resource_qv1xp"), true],
+"method": &"new_dialogue"
+}, {
+"args": [SubResource("Resource_fgym7"), true],
+"method": &"new_dialogue"
+}, {
+"args": [SubResource("Resource_4b11c"), true],
+"method": &"new_dialogue"
+}, {
+"args": [SubResource("Resource_pg5ij"), true],
+"method": &"new_dialogue"
+}, {
+"args": [],
+"method": &"fade_away_text_box"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.1, 2.16),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"animation_reset"
+}, {
+"args": [SubResource("Resource_l27cr")],
+"method": &"change_state"
+}]
+}
+
+[sub_resource type="Resource" id="Resource_hippb"]
+script = ExtResource("3_4b11c")
+cutscene_id = &"demo"
+metadata/_custom_type_script = "uid://dmn52hjovsovi"
+
+[sub_resource type="Animation" id="Animation_ofmon"]
+resource_name = "to_void_demo"
+length = 0.02
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutscenePlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.02),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"res://scenes/UI/dialogue_void.tscn", SubResource("Resource_hippb")],
+"method": &"change_scene"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tcdhp"]
+_data = {
+&"start": SubResource("Animation_hippb"),
+&"to_void_demo": SubResource("Animation_ofmon")
+}
+
+[node name="Day1Start" type="Node3D" unique_id=1481348549]
+
+[node name="HouseModel" parent="." unique_id=1393507213 instance=ExtResource("1_i56xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0010689497, -0.008848786, 0.01031822)
+
+[node name="MainCharacter" parent="." unique_id=7935059 node_paths=PackedStringArray("cutscene_player") instance=ExtResource("2_2vykc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0290675, 0.25014395, 0.64173055)
+cutscene_player = NodePath("CutscenePlayer")
+
+[node name="StoryPoint2" parent="MainCharacter" unique_id=476974275 instance=ExtResource("3_ei60f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029067516, -0.25014395, -0.024691164)
+this_story_action = SubResource("Resource_0d2px")
+
+[node name="StartInteraction" parent="MainCharacter" unique_id=943169738 instance=ExtResource("5_k3wyl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1921556, 0.52328736, 0.8729099)
+cutscene = SubResource("Resource_gix20")
+instant = true
+one_shot = true
+interaction_logable = false
+
+[node name="DoorInteraction" parent="MainCharacter" unique_id=1387782812 instance=ExtResource("5_k3wyl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1265326, 0.43075836, 0.8613887)
+cutscene = SubResource("Resource_ova1q")
+instant = true
+
+[node name="CutscenePlayer" parent="MainCharacter" unique_id=1871030014 groups=["player"] instance=ExtResource("6_4g14b")]
+libraries/ = SubResource("AnimationLibrary_tcdhp")

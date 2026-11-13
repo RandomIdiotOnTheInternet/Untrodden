@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bcnywbgaf5my"
+path="res://.godot/imported/Sudden Dilemma (Ambient Mid-Tempo Hope).mp3-e06c1e20e64e8fea6047d589357b3c1d.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/Sudden Dilemma (Ambient Mid-Tempo Hope).mp3"
+dest_files=["res://.godot/imported/Sudden Dilemma (Ambient Mid-Tempo Hope).mp3-e06c1e20e64e8fea6047d589357b3c1d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

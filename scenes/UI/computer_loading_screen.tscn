@@ -1,0 +1,256 @@
+[gd_scene format=3 uid="uid://c4nb3fmbpq3c1"]
+
+[ext_resource type="Script" uid="uid://chpebgmlwrfbe" path="res://scripts/UI/computer_loading_screen.gd" id="1_4e06o"]
+[ext_resource type="Material" uid="uid://d2hxjprvfpjqf" path="res://resources/shaders/computerShader.tres" id="1_b0l7p"]
+[ext_resource type="Texture2D" uid="uid://4a2xb7d7kfcu" path="res://assets/images/computer/Windows28BG.png" id="2_1e56s"]
+[ext_resource type="Texture2D" uid="uid://q2m6w2rqtr8s" path="res://assets/images/aSingularWhitePixel.png" id="4_vgo5m"]
+
+[sub_resource type="Animation" id="Animation_vgo5m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Loading/LoadingPath/LoadingDot:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Loading/LoadingPath/LoadingDot2:progress_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Loading/LoadingPath/LoadingDot:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Loading/LoadingPath/LoadingDot2:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BlackRect:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_4bgne"]
+resource_name = "done_loading"
+length = 2.5000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Loading/LoadingPath/LoadingDot:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.20000005),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.1, 0.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Loading/LoadingPath/LoadingDot2:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.20000005),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.1, 0.1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BlackRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_coyvm"]
+resource_name = "loading"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Loading/LoadingPath/LoadingDot:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.50000006, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.2, 0.85, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Loading/LoadingPath/LoadingDot2:progress_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.50000006, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.05, 0.25, 0.9499999, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4bgne"]
+_data = {
+&"RESET": SubResource("Animation_vgo5m"),
+&"done_loading": SubResource("Animation_4bgne"),
+&"loading": SubResource("Animation_coyvm")
+}
+
+[sub_resource type="Curve2D" id="Curve2D_6fjkc"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 50, 0, 0, 0, 0, 0, 100, 0, 0, 0, 0, -50, 50, 0, 0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[node name="computer_loading_screen" type="Control" unique_id=358376270]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4e06o")
+
+[node name="BG" type="TextureRect" parent="." unique_id=1398153769]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1e56s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=908857618]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -148.5
+offset_top = 109.0
+offset_right = 148.5
+offset_bottom = 196.0
+grow_horizontal = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="VBoxContainer" unique_id=169987416]
+layout_mode = 2
+bbcode_enabled = true
+text = "[font_size=40][b]Wind-owes 28"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="RichTextLabel" parent="VBoxContainer" unique_id=270494729]
+layout_mode = 2
+bbcode_enabled = true
+text = "Because we can.[font_size=10]TM"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=1561758634]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=401972097]
+libraries/ = SubResource("AnimationLibrary_4bgne")
+autoplay = &"loading"
+
+[node name="Loading" type="Control" parent="." unique_id=420200676]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 172.0
+offset_right = 20.0
+offset_bottom = 212.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LoadingPath" type="Path2D" parent="Loading" unique_id=1897545010]
+curve = SubResource("Curve2D_6fjkc")
+
+[node name="LoadingDot" type="PathFollow2D" parent="Loading/LoadingPath" unique_id=1254823509]
+rotation = 0.7853982
+rotates = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Loading/LoadingPath/LoadingDot" unique_id=994290499]
+scale = Vector2(10, 10)
+texture = ExtResource("4_vgo5m")
+
+[node name="LoadingDot2" type="PathFollow2D" parent="Loading/LoadingPath" unique_id=1305462546]
+rotation = 0.7853982
+rotates = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Loading/LoadingPath/LoadingDot2" unique_id=2066328462]
+scale = Vector2(10, 10)
+texture = ExtResource("4_vgo5m")
+
+[node name="PostProcessing" type="CanvasLayer" parent="." unique_id=1871134522]
+
+[node name="PostprocessingRect" type="ColorRect" parent="PostProcessing" unique_id=1676015193]
+material = ExtResource("1_b0l7p")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BlackRect" type="ColorRect" parent="." unique_id=1084757716]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

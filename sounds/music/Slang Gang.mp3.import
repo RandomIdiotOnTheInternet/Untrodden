@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c1lqykguyjxlr"
+path="res://.godot/imported/Slang Gang.mp3-2ae8057ce97f51c4a81ef85c6ff25363.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/Slang Gang.mp3"
+dest_files=["res://.godot/imported/Slang Gang.mp3-2ae8057ce97f51c4a81ef85c6ff25363.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

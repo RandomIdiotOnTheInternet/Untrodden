@@ -1,0 +1,182 @@
+[gd_scene format=3 uid="uid://gt2ug82ek4us"]
+
+[ext_resource type="Script" uid="uid://bt0b1kpfxqsfr" path="res://scripts/characters/main_character.gd" id="1_cdeow"]
+[ext_resource type="PackedScene" uid="uid://blf17ltu5xenx" path="res://scenes/UI/player_UI.tscn" id="6_b8ocx"]
+[ext_resource type="PackedScene" uid="uid://c3nyg1240vocy" path="res://scenes/tool/wandering_node_area.tscn" id="8_3jguk"]
+[ext_resource type="Script" uid="uid://ddm7kkp3vncpc" path="res://scripts/tool/background_music.gd" id="10_ex3f7"]
+[ext_resource type="PackedScene" uid="uid://c78gk5j221fpw" path="res://scenes/tool/custom_audio.tscn" id="11_ex3f7"]
+[ext_resource type="PackedScene" uid="uid://c3fh7b5xpvt8b" path="res://scenes/tool/character_mesh.tscn" id="12_j33pw"]
+[ext_resource type="AudioStream" uid="uid://ceynurgto8a07" path="res://sounds/sfx/walking_sounds.tres" id="12_ywern"]
+[ext_resource type="Resource" uid="uid://4f247ybt11x1" path="res://resources/custom_resources/meshes/heads_george.tres" id="15_vppg3"]
+[ext_resource type="Resource" uid="uid://r3c3iw6j5l7l" path="res://resources/custom_resources/meshes/faces_george.tres" id="16_yh7ap"]
+[ext_resource type="Resource" uid="uid://bxdekfkn5bdqx" path="res://resources/custom_resources/meshes/torsos_george.tres" id="17_yhm0h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_55fil"]
+size = Vector3(0.26293945, 1.5594482, 0.21508789)
+
+[sub_resource type="Animation" id="Animation_a25yj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterMesh:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.3, 0.3, 0.3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharacterMesh:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CharacterMesh:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_e6twp"]
+resource_name = "enter_door_generic"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterMesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.1415927, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharacterMesh:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -1.5)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CharacterMesh")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [true],
+"method": &"set_walking"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ywern"]
+resource_name = "sleeping"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterMesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.87266463, 1.5707964, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharacterMesh:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.2, 0, -0.7)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8d5w8"]
+_data = {
+&"RESET": SubResource("Animation_a25yj"),
+&"enter_door_generic": SubResource("Animation_e6twp"),
+&"sleeping": SubResource("Animation_ywern")
+}
+
+[node name="MainCharacter" type="CharacterBody3D" unique_id=1553447042 groups=["player"]]
+collision_layer = 449
+collision_mask = 257
+script = ExtResource("1_cdeow")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1147796948]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0032958984, 0.7202759, 0.010131836)
+shape = SubResource("BoxShape3D_55fil")
+
+[node name="CharacterMesh" parent="." unique_id=777946477 instance=ExtResource("12_j33pw")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+head_libraries = ExtResource("15_vppg3")
+face_libraries = ExtResource("16_yh7ap")
+torso_libraries = ExtResource("17_yhm0h")
+
+[node name="PlayerUI" parent="." unique_id=116777726 instance=ExtResource("6_b8ocx")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=460752421]
+transform = Transform3D(0.8660254, -0.25, 0.4330127, 0, 0.8660254, 0.5, -0.5, -0.4330127, 0.75, 1.4209402, 2.5432646, 2.6269987)
+projection = 1
+current = true
+size = 4.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1507438695]
+libraries/ = SubResource("AnimationLibrary_8d5w8")
+
+[node name="WaitingTimer" type="Timer" parent="." unique_id=1498205131]
+one_shot = true
+
+[node name="WanderingNodeArea" parent="." unique_id=1241556242 instance=ExtResource("8_3jguk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="WanderingNodeArea2" parent="." unique_id=1360320707 instance=ExtResource("8_3jguk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="Audio" type="Node3D" parent="." unique_id=2138183268]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="Audio" unique_id=1615445089]
+bus = &"Music"
+script = ExtResource("10_ex3f7")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="Audio" unique_id=706846163]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013709992, 0.46002528, 0)
+
+[node name="Footsteps" parent="Audio" unique_id=871528764 instance=ExtResource("11_ex3f7")]
+stream = ExtResource("12_ywern")
+speed = 0.5
+
+[connection signal="finished" from="Audio/BackgroundMusic" to="Audio/BackgroundMusic" method="_on_finished"]
+
+[editable path="PlayerUI"]

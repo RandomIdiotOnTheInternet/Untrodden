@@ -1,0 +1,8 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://cahddg1fbwhlb"]
+
+[ext_resource type="AudioStream" uid="uid://ckeaegjlkan0t" path="res://sounds/sfx/talking_sounds/whisper_4.ogg" id="1_bksxg"]
+
+[resource]
+random_pitch = 1.122462
+streams_count = 1
+stream_0/stream = ExtResource("1_bksxg")

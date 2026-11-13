@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfrd1r83mm012"
+path="res://.godot/imported/Broken And Humbled (Sad Dark Cutscene).mp3-2ed83f8ba751fbe9f12999454ea0ffc7.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/Broken And Humbled (Sad Dark Cutscene).mp3"
+dest_files=["res://.godot/imported/Broken And Humbled (Sad Dark Cutscene).mp3-2ed83f8ba751fbe9f12999454ea0ffc7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

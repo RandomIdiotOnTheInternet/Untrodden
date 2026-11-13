@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ca0qe8cc1c6vr"
+path="res://.godot/imported/Confession (Slow Sad).mp3-b9fda83931b2500de79e8add3cff2734.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/Confession (Slow Sad).mp3"
+dest_files=["res://.godot/imported/Confession (Slow Sad).mp3-b9fda83931b2500de79e8add3cff2734.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,17 @@
+[remap]
+
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
+uid="uid://cxkuf8aada71n"
+path="res://.godot/imported/arm_elder.vox-86ab8651d3818ac3ed1f38dfad2fb1fc.meshlib"
+
+[deps]
+
+source_file="res://vox/people/arms/arm_elder.vox"
+dest_files=["res://.godot/imported/arm_elder.vox-86ab8651d3818ac3ed1f38dfad2fb1fc.meshlib"]
+
+[params]
+
+Scale=0.1
+GreedyMeshGenerator=true
+SnapToGround=false

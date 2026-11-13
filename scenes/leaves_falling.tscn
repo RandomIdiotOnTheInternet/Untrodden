@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://c0vvi3vxaljxp"]
+
+[ext_resource type="Shader" uid="uid://d34ev3ox26ba4" path="res://resources/shaders/leaves_falling.gdshader" id="1_bsuew"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0d2px"]
+shader = ExtResource("1_bsuew")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/box_emit_size = Vector3(10, 0.1, 10)
+shader_parameter/initial_rotation_xz = 0.5
+shader_parameter/fade_from = 0.9
+shader_parameter/forward_speed_min = 5.0
+shader_parameter/forward_speed_max = 15.0
+shader_parameter/rot_speed_x = Vector2(0, 0.5)
+shader_parameter/rot_speed_y = Vector2(1, 2)
+shader_parameter/rot_speed_z = Vector2(1, 2)
+shader_parameter/vel_damping = 1.0
+shader_parameter/grav = Vector3(0, -9.8, 0)
+shader_parameter/wind_direction = Vector3(0, 0, -1)
+shader_parameter/wind_speed_min = -5.0
+shader_parameter/wind_speed_max = 40.0
+shader_parameter/wind_change = Vector2(0.123, 0.456)
+shader_parameter/vortex_force = Vector2(1, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ethm"]
+shading_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0, 0.6862745, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gpmlx"]
+material = SubResource("StandardMaterial3D_5ethm")
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="GPUParticles3D" type="GPUParticles3D" unique_id=544312150]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+amount = 64
+lifetime = 15.0
+randomness = 0.5
+local_coords = true
+process_material = SubResource("ShaderMaterial_0d2px")
+draw_pass_1 = SubResource("BoxMesh_gpmlx")

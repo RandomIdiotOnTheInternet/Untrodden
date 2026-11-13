@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://dkx2pk5mfe6ct"]
+
+[node name="EndOfDayUI" type="Control" unique_id=1684382849]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="." unique_id=29563839]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101960786, 0.101960786, 0.101960786, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=965800060]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2050138269]
+layout_mode = 2
+
+[node name="Header" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1680340734]
+layout_mode = 2
+text = "Day 1 - Summary"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=369416710]
+layout_mode = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1375631973]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1822008612]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=2101382865]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1146159052]
+layout_mode = 2
+text = "Time to pay bills. Yay............."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Savings" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1440738121]
+layout_mode = 2
+text = "Savings - 0$"
+
+[node name="Income" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1455421220]
+layout_mode = 2
+text = "Gained - 0$"
+
+[node name="CostOption" type="CheckButton" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=822154149]
+layout_mode = 2
+text = "Pay rent  "
+
+[node name="TotalBalance" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=571618672]
+layout_mode = 2
+text = "Total Balance - Ur bad"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=59862390]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1051937211]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2" unique_id=1428441813]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer2" unique_id=326982470]
+layout_mode = 2
+text = "...What would I like to do?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Income" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer2" unique_id=1151471352]
+layout_mode = 2
+text = "Reasonable time left to spend: -1 Minute"
+
+[node name="CostOption" type="CheckButton" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer2" unique_id=1660237740]
+layout_mode = 2
+text = "Play Games"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer2" unique_id=689282710]
+layout_mode = 2
+
+[node name="TotalBalance" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer2" unique_id=701751822]
+layout_mode = 2
+text = "Total Time Cost: -1 Minutes, 67 Seconds
+"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer2" unique_id=115678976]
+layout_mode = 2
+text = "Hit the hay"

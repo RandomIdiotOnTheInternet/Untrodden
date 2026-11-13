@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cqgwy3ldouasx"]
+
+[ext_resource type="PackedScene" uid="uid://c8ecr6a4aidu0" path="res://scenes/world/Models/work_model.tscn" id="1_a4s7f"]
+[ext_resource type="PackedScene" uid="uid://gt2ug82ek4us" path="res://scenes/player/main_character.tscn" id="2_jpeia"]
+[ext_resource type="PackedScene" uid="uid://cxd3odg5s4scp" path="res://scenes/tool/cutscene_player.tscn" id="3_atux7"]
+
+[node name="day_1_work" type="Node3D" unique_id=1027973617]
+
+[node name="WorkModel" parent="." unique_id=2107049892 instance=ExtResource("1_a4s7f")]
+
+[node name="MainCharacter" parent="." unique_id=1553447042 instance=ExtResource("2_jpeia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8197224, 0.25, 0)
+
+[node name="CutscenePlayer" parent="MainCharacter" unique_id=1871030014 instance=ExtResource("3_atux7")]

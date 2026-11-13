@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dna61u4q4qq68"
+path="res://.godot/imported/Society's Lament.mp3-561c0327b12c3676dd36d956ecedd782.mp3str"
+
+[deps]
+
+source_file="res://sounds/Society's Lament.mp3"
+dest_files=["res://.godot/imported/Society's Lament.mp3-561c0327b12c3676dd36d956ecedd782.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

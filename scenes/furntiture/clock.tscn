@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dlew4dsw8xgfq"]
+
+[ext_resource type="ArrayMesh" uid="uid://bakcgcvpcxqld" path="res://vox/furniture/wallClock.vox" id="1_1s2tn"]
+[ext_resource type="AudioStream" uid="uid://cu5k8g2408d6r" path="res://sounds/sfx/ticking_clock.wav" id="2_h77kd"]
+
+[node name="Clock" type="MeshInstance3D" unique_id=612694989]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+mesh = ExtResource("1_1s2tn")
+
+[node name="TickingSound" type="AudioStreamPlayer3D" parent="." unique_id=1205113831]
+stream = ExtResource("2_h77kd")
+volume_db = -10.0
+max_db = 1.0
+autoplay = true
+bus = &"Ambient"

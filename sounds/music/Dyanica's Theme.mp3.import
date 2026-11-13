@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://rex1loqropt6"
+path="res://.godot/imported/Dyanica's Theme.mp3-c1f2285c66f59bf9076ae746b2805702.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/Dyanica's Theme.mp3"
+dest_files=["res://.godot/imported/Dyanica's Theme.mp3-c1f2285c66f59bf9076ae746b2805702.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

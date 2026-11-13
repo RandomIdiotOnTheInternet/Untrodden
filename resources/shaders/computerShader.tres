@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://d2hxjprvfpjqf"]
+
+[ext_resource type="Shader" uid="uid://ducjuval8xkbk" path="res://resources/shaders/computerShader.gdshader" id="1_cilmk"]
+
+[resource]
+shader = ExtResource("1_cilmk")
+shader_parameter/resolution = Vector2(320, 180)
+shader_parameter/scan_line_amount = 0.10000000475
+shader_parameter/warp_amount = 0.0
+shader_parameter/vignette_amount = 0.5
+shader_parameter/vignette_intensity = 0.3
+shader_parameter/grille_amount = 0.0250000011875
+shader_parameter/brightness_boost = 1.30000001425

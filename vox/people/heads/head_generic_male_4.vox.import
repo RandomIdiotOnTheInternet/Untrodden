@@ -1,0 +1,17 @@
+[remap]
+
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
+uid="uid://cw6vir1ehxucg"
+path="res://.godot/imported/head_generic_male_4.vox-8a41d278e6436b5f7830c0847a0fd256.meshlib"
+
+[deps]
+
+source_file="res://vox/people/heads/head_generic_male_4.vox"
+dest_files=["res://.godot/imported/head_generic_male_4.vox-8a41d278e6436b5f7830c0847a0fd256.meshlib"]
+
+[params]
+
+Scale=0.1
+GreedyMeshGenerator=true
+SnapToGround=false

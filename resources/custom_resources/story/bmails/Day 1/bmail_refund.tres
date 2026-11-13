@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="BmailData" format=3 uid="uid://bu4rdguieqi7y"]
+
+[ext_resource type="Script" uid="uid://bhv7rst7eb3dk" path="res://scripts/UI/BmailData.gd" id="1_8k3su"]
+[ext_resource type="Script" uid="uid://bjploipt1rv4x" path="res://scripts/tool/decision_option.gd" id="1_j6chj"]
+[ext_resource type="Script" uid="uid://bbjbc8ebh4u8e" path="res://scripts/tool/data_holder.gd" id="2_yl2fn"]
+[ext_resource type="Script" uid="uid://c5p7diksqo6j" path="res://scripts/tool/decision.gd" id="3_kuynw"]
+[ext_resource type="Resource" uid="uid://8k7k5kpwangx" path="res://resources/custom_resources/story/bmails/bmail_reply.tres" id="3_pyij7"]
+
+[sub_resource type="Resource" id="Resource_payoi"]
+script = ExtResource("1_j6chj")
+cutscene = ExtResource("3_pyij7")
+decision_description = "Respond quickly and efficently"
+decision_reasoning = "[color=dark_gray]\"I don't want to waste any time here. I have to be efficent.\""
+decision_result = "You've been taken off our list. We couldn't be happier.
+Sincerely, What's-New-News."
+metadata/_custom_type_script = "uid://bjploipt1rv4x"
+
+[sub_resource type="Resource" id="Resource_kcvc6"]
+script = ExtResource("1_j6chj")
+cutscene = ExtResource("3_pyij7")
+decision_description = "Spend time crafting a response"
+decision_reasoning = "[color=dark_gray]\"I'm note sure I should... they'd probably be unhappy with whatever responce I give.\""
+decision_result = "I'm very sorry about the issues you've been having with our subscription canacelation servies. We'll have your account taken off immediently."
+metadata/_custom_type_script = "uid://bjploipt1rv4x"
+
+[sub_resource type="Resource" id="Resource_l3vqn"]
+script = ExtResource("3_kuynw")
+options = Array[ExtResource("1_j6chj")]([SubResource("Resource_payoi"), SubResource("Resource_kcvc6")])
+metadata/_custom_type_script = "uid://c5p7diksqo6j"
+
+[resource]
+script = ExtResource("1_8k3su")
+subject = "REFUND NOW!!"
+inbound_body = "YOU ***** CHARGED ME AGAIN
+listen i wont put up for this stuff, its alr overpriced soooo much
+take me off yor mailing list or i will find you
+my account name is krakinous123"
+decision = SubResource("Resource_l3vqn")
+metadata/_custom_type_script = "uid://bhv7rst7eb3dk"

@@ -1,0 +1,20 @@
+[gd_resource type="MeshLibrary" format=3 uid="uid://crdhhraiohwa1"]
+
+[ext_resource type="ArrayMesh" uid="uid://b5wufxli7n2iq" path="res://vox/people/faces/brown_neutral.vox" id="1_ef0c7"]
+[ext_resource type="ArrayMesh" uid="uid://b8gogdecndndv" path="res://vox/people/faces/generic_blinking.vox" id="2_mnjn2"]
+
+[resource]
+item/0/name = ""
+item/0/mesh = ExtResource("1_ef0c7")
+item/0/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/mesh_cast_shadow = 1
+item/0/shapes = []
+item/0/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/navigation_layers = 1
+item/1/name = ""
+item/1/mesh = ExtResource("2_mnjn2")
+item/1/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/1/mesh_cast_shadow = 1
+item/1/shapes = []
+item/1/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/1/navigation_layers = 1

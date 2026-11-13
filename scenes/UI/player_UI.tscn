@@ -1,0 +1,784 @@
+[gd_scene format=3 uid="uid://blf17ltu5xenx"]
+
+[ext_resource type="Script" uid="uid://bt4d6071wcl76" path="res://scripts/UI/player_ui.gd" id="1_a5oey"]
+[ext_resource type="Shader" uid="uid://1pxtl1317x4x" path="res://resources/shaders/black_and_white.gdshader" id="2_idcah"]
+[ext_resource type="PackedScene" uid="uid://b6x61w53d5aif" path="res://scenes/UI/decision_button.tscn" id="2_ysmm1"]
+[ext_resource type="Script" uid="uid://w880sjaj6bw7" path="res://scripts/UI/story_text_ui.gd" id="6_b10my"]
+[ext_resource type="StyleBox" uid="uid://dyuebbwca0s8x" path="res://resources/themes/dark_panel.tres" id="6_cdxmb"]
+[ext_resource type="Script" uid="uid://cdunsv8aknv05" path="res://scripts/UI/text_box.gd" id="6_u1io5"]
+[ext_resource type="PackedScene" uid="uid://c7cmjg6bwlc5" path="res://scenes/UI/revealing_text.tscn" id="7_b10my"]
+[ext_resource type="Material" uid="uid://c8k12yki6w2j1" path="res://resources/shaders/shake_material.tres" id="7_idcah"]
+[ext_resource type="AudioStream" uid="uid://c5xf52va5nwht" path="res://sounds/sfx/talking_sounds/quick_3.ogg" id="7_lqkh1"]
+[ext_resource type="FontFile" uid="uid://iyvfdycgyiej" path="res://resources/fonts/Pixelated Elegance/TrueType (.ttf)/Pixelated Elegance.ttf" id="7_u1io5"]
+[ext_resource type="Texture2D" uid="uid://dyyep42nxyhtu" path="res://assets/images/aSingularBlackPixel.png" id="9_idcah"]
+[ext_resource type="Material" uid="uid://32cd5dw2qnly" path="res://resources/shaders/UI_BG_blur.tres" id="12_qdd2m"]
+[ext_resource type="StyleBox" uid="uid://csslvvcid1mxj" path="res://resources/themes/dark_glass_pannel.tres" id="13_rasa6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qdd2m"]
+shader = ExtResource("2_idcah")
+shader_parameter/saturation = 1.0
+
+[sub_resource type="Animation" id="Animation_ip01g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UIBackground:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UIBackground:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ScreenNoticeLabel:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextBox/DecisionContainer:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextBox/HBoxContainer/DialogueText:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextBox:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextBox/DecisionContainer:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7, 4.5)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TextBox/DecisionContainer/Decision1:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ScreenNoticeLabel:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ScreenNoticeLabel:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("TextBox/DecisionContainer/Decision2:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("TextBox/DecisionContainer/Decision3:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("TextBox/DecisionContainer/Decision5:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("TextBox/DecisionContainer/Decision4:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("PauseMenu:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_3fgfs"]
+resource_name = "black_screen_fade_in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UIBackground:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UIBackground:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.16, 0.16, 0.16, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_j4q1j"]
+resource_name = "black_screen_fade_out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UIBackground:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UIBackground:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0.16, 0.16, 0.16, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextBox:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_n13jj"]
+resource_name = "cutscene_end"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UIBackground:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextBox:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_a5oey"]
+resource_name = "cutscene_start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UIBackground:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ScreenNoticeLabel:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_idcah"]
+resource_name = "decision_end"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextBox/DecisionContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -170), Vector2(0, -172), Vector2(0, -95), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextBox/DecisionContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextBox/DecisionContainer/Decision1:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextBox/DecisionContainer/Decision2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextBox/DecisionContainer/Decision3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("UIBackground:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("UIBackground:color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.29411766), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8jlvd"]
+resource_name = "decision_start"
+length = 0.45
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextBox/DecisionContainer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UIBackground:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UIBackground:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.29411766)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextBox/DecisionContainer:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(7, 4.5), Vector2(7, -180), Vector2(7, -150), Vector2(7, -170), Vector2(7, -165), Vector2(7, -160)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n13jj"]
+_data = {
+&"RESET": SubResource("Animation_ip01g"),
+&"black_screen_fade_in": SubResource("Animation_3fgfs"),
+&"black_screen_fade_out": SubResource("Animation_j4q1j"),
+&"cutscene_end": SubResource("Animation_n13jj"),
+&"cutscene_start": SubResource("Animation_a5oey"),
+&"decision_end": SubResource("Animation_idcah"),
+&"decision_start": SubResource("Animation_8jlvd")
+}
+
+[node name="PlayerUI" type="Control" unique_id=1749572904]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_a5oey")
+
+[node name="PostProcessing" type="CanvasLayer" parent="." unique_id=791131923]
+layer = 100
+
+[node name="ColorRect" type="ColorRect" parent="PostProcessing" unique_id=1337212701]
+material = SubResource("ShaderMaterial_qdd2m")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="UIBackground" type="ColorRect" parent="." unique_id=43764878]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="UI Animations" type="AnimationPlayer" parent="." unique_id=1860123909]
+process_mode = 1
+libraries/ = SubResource("AnimationLibrary_n13jj")
+
+[node name="StoryTextUI" type="Control" parent="." unique_id=1665198591]
+process_mode = 1
+visible = false
+layout_mode = 1
+anchor_top = 0.6867284
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("6_b10my")
+metadata/_edit_use_anchors_ = true
+
+[node name="StoryText" parent="StoryTextUI" unique_id=657346729 instance=ExtResource("7_b10my")]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.31527093
+theme_override_font_sizes/normal_font_size = 30
+text = "[color=white]The quick brown fox jumped over the lazy dog. Such was the way of the world."
+vertical_alignment = 0
+
+[node name="ScreenNoticeLabel" parent="." unique_id=546250702 instance=ExtResource("7_b10my")]
+unique_name_in_owner = true
+process_mode = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.11545139
+anchor_top = 0.5697823
+anchor_right = 0.9036458
+anchor_bottom = 0.6515724
+text = "[pulse freq=0.5](Press shift to enter...)"
+fit_content = true
+visible_characters = 0
+visible_ratio = 0.0
+reveal_speed = 0.2
+punctuation_pauses = false
+
+[node name="TextBox" type="Control" parent="." unique_id=1151104699]
+process_mode = 1
+visible = false
+layout_mode = 1
+anchor_left = 0.11033678
+anchor_top = 0.64969134
+anchor_right = 0.9041104
+anchor_bottom = 0.91049385
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_u1io5")
+
+[node name="DecisionContainer" type="HBoxContainer" parent="TextBox" unique_id=1070857956]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(600, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.2136
+offset_top = -80.0
+offset_right = 449.7864
+offset_bottom = 80.00009
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Decision1" parent="TextBox/DecisionContainer" unique_id=1797123380 instance=ExtResource("2_ysmm1")]
+visible = false
+layout_mode = 2
+focus_neighbor_left = NodePath("../Decision3")
+focus_neighbor_right = NodePath("../Decision2")
+
+[node name="Decision2" parent="TextBox/DecisionContainer" unique_id=1425019445 instance=ExtResource("2_ysmm1")]
+visible = false
+layout_mode = 2
+focus_neighbor_left = NodePath("../Decision1")
+focus_neighbor_right = NodePath("../Decision3")
+
+[node name="Decision3" parent="TextBox/DecisionContainer" unique_id=426618221 instance=ExtResource("2_ysmm1")]
+visible = false
+layout_mode = 2
+focus_neighbor_left = NodePath("../Decision2")
+focus_neighbor_right = NodePath("../Decision1")
+
+[node name="Decision4" parent="TextBox/DecisionContainer" unique_id=1119573790 instance=ExtResource("2_ysmm1")]
+visible = false
+layout_mode = 2
+focus_neighbor_left = NodePath("../Decision3")
+focus_neighbor_right = NodePath("../Decision2")
+
+[node name="Decision5" parent="TextBox/DecisionContainer" unique_id=1979648735 instance=ExtResource("2_ysmm1")]
+visible = false
+layout_mode = 2
+focus_neighbor_left = NodePath("../Decision3")
+focus_neighbor_right = NodePath("../Decision2")
+
+[node name="Panel" type="Panel" parent="TextBox" unique_id=853991919]
+material = ExtResource("7_idcah")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("6_cdxmb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextBox" unique_id=1300128846]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerPortrait" type="TextureRect" parent="TextBox/HBoxContainer" unique_id=1298528244]
+material = ExtResource("7_idcah")
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+texture = ExtResource("9_idcah")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DialogueText" parent="TextBox/HBoxContainer" unique_id=1417559360 instance=ExtResource("7_b10my")]
+unique_name_in_owner = true
+material = ExtResource("7_idcah")
+custom_minimum_size = Vector2(600, 170)
+layout_mode = 2
+theme_override_constants/line_separation = 3
+theme_override_fonts/normal_font = ExtResource("7_u1io5")
+theme_override_font_sizes/normal_font_size = 30
+text = "Hello. This is a [rainbow speed=0.2]test[/rainbow]. How are you doing today? I'm doing fantabulously fantabuloshfiahfofhoahfo- good :)"
+horizontal_alignment = 0
+stream = ExtResource("7_lqkh1")
+
+[node name="OtherPortrait" type="TextureRect" parent="TextBox/HBoxContainer" unique_id=978073088]
+material = ExtResource("7_idcah")
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+texture = ExtResource("9_idcah")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="PauseMenu" type="ColorRect" parent="." unique_id=1378081566]
+visible = false
+material = ExtResource("12_qdd2m")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.16, 0.16, 0.16, 0.5882353)
+
+[node name="SectionContainer" type="HBoxContainer" parent="PauseMenu" unique_id=331461298]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/SectionContainer" unique_id=1228730013]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/SectionContainer/MarginContainer" unique_id=829533540]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 2
+
+[node name="Button" type="Button" parent="PauseMenu/SectionContainer/MarginContainer/VBoxContainer" unique_id=1887854786]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+text = "Options"
+autowrap_mode = 3
+
+[node name="Button2" type="Button" parent="PauseMenu/SectionContainer/MarginContainer/VBoxContainer" unique_id=1557927829]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+text = "Leave everything"
+autowrap_mode = 3
+
+[node name="ThinkingContainer" type="MarginContainer" parent="PauseMenu/SectionContainer" unique_id=1909887907]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/SectionContainer/ThinkingContainer" unique_id=431808239]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="RichTextLabel" parent="PauseMenu/SectionContainer/ThinkingContainer/VBoxContainer" unique_id=1769877823]
+material = ExtResource("7_idcah")
+layout_mode = 2
+bbcode_enabled = true
+text = "[font_size=48]Thinking..."
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="PauseMenu/SectionContainer/ThinkingContainer/VBoxContainer" unique_id=726110469]
+material = ExtResource("7_idcah")
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("13_rasa6")
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/SectionContainer/ThinkingContainer/VBoxContainer/Panel" unique_id=2096304298]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = -84.0
+offset_right = 195.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="PauseMenu/SectionContainer/ThinkingContainer/VBoxContainer/Panel/MarginContainer" unique_id=2056005324]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/SectionContainer/ThinkingContainer/VBoxContainer/Panel/MarginContainer/CenterContainer" unique_id=2008503451]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="RichTextLabel" parent="PauseMenu/SectionContainer/ThinkingContainer/VBoxContainer/Panel/MarginContainer/CenterContainer/VBoxContainer" unique_id=419187135]
+custom_maximum_size = Vector2(350, -1)
+layout_mode = 2
+bbcode_enabled = true
+text = "I feel
+absolutely
+terrible."
+fit_content = true
+scroll_active = false
+autowrap_mode = 1
+
+[node name="Label2" type="RichTextLabel" parent="PauseMenu/SectionContainer/ThinkingContainer/VBoxContainer/Panel/MarginContainer/CenterContainer/VBoxContainer" unique_id=440257954]
+custom_maximum_size = Vector2(350, -1)
+layout_mode = 2
+bbcode_enabled = true
+text = "I'm sad."
+fit_content = true
+scroll_active = false
+
+[node name="Label3" type="RichTextLabel" parent="PauseMenu/SectionContainer/ThinkingContainer/VBoxContainer/Panel/MarginContainer/CenterContainer/VBoxContainer" unique_id=769946971]
+custom_maximum_size = Vector2(350, -1)
+layout_mode = 2
+bbcode_enabled = true
+text = "Why am I here?"
+fit_content = true
+scroll_active = false
+
+[node name="VBoxContainer3" type="MarginContainer" parent="PauseMenu/SectionContainer" unique_id=900029129]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[connection signal="dialouge_finished" from="TextBox" to="." method="dialogue_finished"]
+[connection signal="decision_made" from="TextBox/DecisionContainer/Decision1" to="." method="_on_decision_made"]
+[connection signal="decision_made" from="TextBox/DecisionContainer/Decision2" to="." method="_on_decision_made"]
+[connection signal="decision_made" from="TextBox/DecisionContainer/Decision3" to="." method="_on_decision_made"]
+[connection signal="finishedRevealing" from="TextBox/HBoxContainer/DialogueText" to="TextBox" method="_on_finished_revealing"]

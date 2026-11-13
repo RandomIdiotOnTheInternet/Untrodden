@@ -1,0 +1,17 @@
+[remap]
+
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
+uid="uid://g67rgkwcin3v"
+path="res://.godot/imported/legs_generic_male_1_library.vox-1613f9faaf7924ba099d80273d6a00f2.meshlib"
+
+[deps]
+
+source_file="res://vox/people/legs/legs_generic_male_1_library.vox"
+dest_files=["res://.godot/imported/legs_generic_male_1_library.vox-1613f9faaf7924ba099d80273d6a00f2.meshlib"]
+
+[params]
+
+Scale=0.1
+GreedyMeshGenerator=true
+SnapToGround=false

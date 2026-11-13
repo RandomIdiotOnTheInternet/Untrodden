@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://crbaogi562di6"]
+
+[ext_resource type="Script" uid="uid://b7ogau8p5or1i" path="res://scripts/UI/decision_confirmation.gd" id="1_0r3dw"]
+
+[node name="DecisionConfirmation" type="ConfirmationDialog" unique_id=1417448656]
+oversampling_override = 1.0
+title = ""
+initial_position = 1
+size = Vector2i(400, 211)
+borderless = true
+ok_button_text = "Yes"
+dialog_hide_on_ok = false
+cancel_button_text = "No"
+script = ExtResource("1_0r3dw")
+
+[node name="ConfirmationLabel" type="RichTextLabel" parent="." unique_id=810262621]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 392.0
+offset_bottom = 158.0
+bbcode_enabled = true
+text = "Are you sure?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="confirmed" from="." to="." method="_on_confirmed"]

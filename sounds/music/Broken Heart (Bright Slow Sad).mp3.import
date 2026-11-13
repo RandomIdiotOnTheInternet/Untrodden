@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://gdxcs1vmdugy"
+path="res://.godot/imported/Broken Heart (Bright Slow Sad).mp3-246c92036dbc04f185bf49e3dd913f53.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/Broken Heart (Bright Slow Sad).mp3"
+dest_files=["res://.godot/imported/Broken Heart (Bright Slow Sad).mp3-246c92036dbc04f185bf49e3dd913f53.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

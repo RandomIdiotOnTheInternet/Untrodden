@@ -1,0 +1,17 @@
+[remap]
+
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
+uid="uid://cl6yh3bu1nyq"
+path="res://.godot/imported/torso_generic_female_1.vox-9224f718609968d6e7561761106d9357.meshlib"
+
+[deps]
+
+source_file="res://vox/people/torsos/torso_generic_female_1.vox"
+dest_files=["res://.godot/imported/torso_generic_female_1.vox-9224f718609968d6e7561761106d9357.meshlib"]
+
+[params]
+
+Scale=0.1
+GreedyMeshGenerator=true
+SnapToGround=false

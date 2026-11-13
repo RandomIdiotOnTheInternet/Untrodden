@@ -1,0 +1,194 @@
+[gd_scene format=3 uid="uid://cvk0fb4762exy"]
+
+[ext_resource type="Script" uid="uid://dw51wse0sm6q" path="res://scripts/UI/dialogue_void.gd" id="1_ot66w"]
+[ext_resource type="PackedScene" uid="uid://cxd3odg5s4scp" path="res://scenes/tool/cutscene_player.tscn" id="2_e71ev"]
+[ext_resource type="Texture2D" uid="uid://dyyep42nxyhtu" path="res://assets/images/aSingularBlackPixel.png" id="3_bg36n"]
+[ext_resource type="Script" uid="uid://c1irdit10ydy4" path="res://scripts/tool/dialogue.gd" id="4_rmox7"]
+[ext_resource type="AudioStream" uid="uid://c5xf52va5nwht" path="res://sounds/sfx/talking_sounds/quick_3.ogg" id="5_bymwl"]
+[ext_resource type="AudioStream" uid="uid://bge3xgdybjq35" path="res://sounds/sfx/talking_sounds/male_deep_1.ogg" id="6_1q552"]
+[ext_resource type="AudioStream" uid="uid://cprqxdwgkiry7" path="res://sounds/sfx/talking_sounds/quick_2.ogg" id="7_4v7yj"]
+[ext_resource type="PackedScene" uid="uid://blf17ltu5xenx" path="res://scenes/UI/player_UI.tscn" id="8_8uniy"]
+
+[sub_resource type="Resource" id="Resource_ot66w"]
+script = ExtResource("4_rmox7")
+text = "[color=dark_gray]And so, you go to work."
+text_sound = ExtResource("5_bymwl")
+horizontal_alignment = 1
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_e71ev"]
+script = ExtResource("4_rmox7")
+text = "[color=dark_gray]You don't see the trees. The cars. The people passing by."
+horizontal_alignment = 1
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_bg36n"]
+script = ExtResource("4_rmox7")
+text = "[color=dark_gray]Doing such isn't profitable, nor is it fashionable. Why should you?[/color]"
+horizontal_alignment = 1
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_rmox7"]
+script = ExtResource("4_rmox7")
+text = "[color=dark_gray]Only one though prevails in your mind:[/color]"
+horizontal_alignment = 1
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_bymwl"]
+script = ExtResource("4_rmox7")
+text = "[color=dark_red] It's time for work. Again.[/color]"
+reset_text = false
+horizontal_alignment = 1
+pitch_scale = 0.5
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Animation" id="Animation_e71ev"]
+resource_name = "demo"
+length = 5.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutscenePlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.0333333, 1.0666667, 1.1, 1.1333333, 1.1666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"values": [{
+"args": [SubResource("Resource_ot66w"), true],
+"method": &"new_dialogue"
+}, {
+"args": [SubResource("Resource_e71ev"), true],
+"method": &"new_dialogue"
+}, {
+"args": [SubResource("Resource_bg36n"), true],
+"method": &"new_dialogue"
+}, {
+"args": [SubResource("Resource_rmox7"), true],
+"method": &"new_dialogue"
+}, {
+"args": [SubResource("Resource_bymwl"), true],
+"method": &"new_dialogue"
+}]
+}
+
+[sub_resource type="Resource" id="Resource_rajly"]
+script = ExtResource("4_rmox7")
+text = "[color=dark_gray]You remember something, long forgotten within the receses of your mind."
+left_portrait = ExtResource("3_bg36n")
+right_portrait = ExtResource("3_bg36n")
+text_sound = ExtResource("5_bymwl")
+horizontal_alignment = 1
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_31t18"]
+script = ExtResource("4_rmox7")
+text = "..g-get outa my way, l-lumphead."
+text_sound = ExtResource("6_1q552")
+horizontal_alignment = 2
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_vmm5v"]
+script = ExtResource("4_rmox7")
+text = "Get out, I said! L-l-leave... you're not worth a dime, you... thief."
+horizontal_alignment = 2
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_cpb78"]
+script = ExtResource("4_rmox7")
+text = "[shake]I-I-I was just hungry, daddy![/shake] I'm sorry! What-"
+text_sound = ExtResource("7_4v7yj")
+waits = false
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_0qlct"]
+script = ExtResource("4_rmox7")
+text = "[color=dark_gray]*You hear a bottle crashing, and a high-pitched [/color][color=gray]scream[/color][color=dark_gray].*"
+horizontal_alignment = 1
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Resource" id="Resource_arj8e"]
+script = ExtResource("4_rmox7")
+text = "[color=dark_gray]You don't want to remember any more."
+horizontal_alignment = 1
+metadata/_custom_type_script = "uid://c1irdit10ydy4"
+
+[sub_resource type="Animation" id="Animation_13wi1"]
+resource_name = "memory_father"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutscenePlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.16666667, 0.3, 0.43333334, 0.56666666, 0.7, 0.8666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [SubResource("Resource_rajly"), true],
+"method": &"new_dialogue"
+}, {
+"args": [SubResource("Resource_31t18"), true],
+"method": &"new_dialogue"
+}, {
+"args": [SubResource("Resource_vmm5v"), true],
+"method": &"new_dialogue"
+}, {
+"args": [SubResource("Resource_cpb78"), true],
+"method": &"new_dialogue"
+}, {
+"args": [SubResource("Resource_0qlct"), true],
+"method": &"new_dialogue"
+}, {
+"args": [SubResource("Resource_arj8e"), true],
+"method": &"new_dialogue"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3jkvs"]
+_data = {
+&"demo": SubResource("Animation_e71ev"),
+&"memory_father": SubResource("Animation_13wi1")
+}
+
+[node name="DialogueVoid" type="Control" unique_id=1431612553]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ot66w")
+
+[node name="BGColor" type="ColorRect" parent="." unique_id=2023688794]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.312
+anchor_top = -1.245
+anchor_right = 2.4180002
+anchor_bottom = 2.644
+offset_left = -0.57592773
+offset_top = -0.23999023
+offset_right = -0.5361328
+offset_bottom = -0.31201172
+color = Color(0, 0, 0, 1)
+
+[node name="CutscenePlayer" parent="." unique_id=1871030014 groups=["player"] instance=ExtResource("2_e71ev")]
+libraries/ = SubResource("AnimationLibrary_3jkvs")
+
+[node name="PlayerUI" parent="." unique_id=1749572904 instance=ExtResource("8_8uniy")]
+layout_mode = 1
+
+[node name="Control" type="Control" parent="." unique_id=2037108453]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2

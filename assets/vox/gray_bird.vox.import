@@ -1,0 +1,17 @@
+[remap]
+
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
+uid="uid://bvaepwneugue3"
+path="res://.godot/imported/gray_bird.vox-f5819618700dd07dbca353bf36e39aa7.meshlib"
+
+[deps]
+
+source_file="res://assets/vox/gray_bird.vox"
+dest_files=["res://.godot/imported/gray_bird.vox-f5819618700dd07dbca353bf36e39aa7.meshlib"]
+
+[params]
+
+Scale=0.1
+GreedyMeshGenerator=true
+SnapToGround=false

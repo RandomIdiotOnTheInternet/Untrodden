@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://7jb5n8q60fqp"]
+
+[resource]
+transparency = 3
+alpha_hash_scale = 0.1
+alpha_antialiasing_mode = 0
+shading_mode = 0

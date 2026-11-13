@@ -1,0 +1,257 @@
+[gd_scene load_steps=24 format=3 uid="uid://c7gvmeuvct1kj"]
+
+[ext_resource type="ArrayMesh" uid="uid://d1d6bqyefav10" path="res://vox/furniture/HDstatictv1.vox" id="1_ce7w3"]
+[ext_resource type="Script" uid="uid://cdl7fwpnn4w3c" path="res://scripts/furniture/television.gd" id="1_dqfto"]
+[ext_resource type="ArrayMesh" uid="uid://dl1w0hrpu7dad" path="res://vox/furniture/HDstatictv2.vox" id="2_by1gb"]
+[ext_resource type="ArrayMesh" uid="uid://dhl5llm61euji" path="res://vox/furniture/HDstatictv3.vox" id="3_10hav"]
+[ext_resource type="ArrayMesh" uid="uid://d1dxwe0byeeab" path="res://vox/furniture/HDstatictv4.vox" id="4_dqfto"]
+[ext_resource type="ArrayMesh" uid="uid://bfh1ec78l37m6" path="res://vox/furniture/HDstatictv5.vox" id="5_dwbim"]
+[ext_resource type="ArrayMesh" uid="uid://dj1je84b8oe0u" path="res://vox/furniture/livelytv.vox" id="6_10hav"]
+[ext_resource type="ArrayMesh" uid="uid://cffge3vs5uy83" path="res://vox/HDtvoff.vox" id="8_dwbim"]
+[ext_resource type="PackedScene" uid="uid://cghl0n2wcpn3k" path="res://scenes/characters/thoughts.tscn" id="9_pl8m6"]
+[ext_resource type="ArrayMesh" uid="uid://djnfbhjs3aad1" path="res://vox/furniture/HDtvOxNewsIntro1.vox" id="9_toot0"]
+[ext_resource type="ArrayMesh" uid="uid://ckhrarflwol0e" path="res://vox/furniture/HDtvOxNewsIntro2.vox" id="10_c2vyd"]
+[ext_resource type="ArrayMesh" uid="uid://bq6t7d0g0oxr1" path="res://vox/furniture/HDtvOxNewsLogo.vox" id="11_q8bw3"]
+[ext_resource type="PackedScene" uid="uid://cxd3odg5s4scp" path="res://scenes/tool/cutscene_player.tscn" id="13_c2vyd"]
+
+[sub_resource type="Animation" id="Animation_cuuwk"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TvMesh:mesh")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_dwbim")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpotLight3D:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_dqfto"]
+resource_name = "nature_program"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TvMesh:mesh")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_10hav")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpotLight3D:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+
+[sub_resource type="Animation" id="Animation_5dxy3"]
+resource_name = "off"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpotLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TvMesh:mesh")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_dwbim")]
+}
+
+[sub_resource type="Animation" id="Animation_toot0"]
+resource_name = "ox_news_intro"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TvMesh:mesh")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("9_toot0"), ExtResource("10_c2vyd")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpotLight3D:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+
+[sub_resource type="Animation" id="Animation_sc14b"]
+resource_name = "ox_news_logo"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TvMesh:mesh")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_q8bw3")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpotLight3D:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+
+[sub_resource type="Animation" id="Animation_pl8m6"]
+resource_name = "static"
+length = 0.25
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TvMesh:mesh")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_ce7w3"), ExtResource("2_by1gb"), ExtResource("3_10hav"), ExtResource("4_dqfto"), ExtResource("5_dwbim")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpotLight3D:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5dxy3"]
+_data = {
+&"RESET": SubResource("Animation_cuuwk"),
+&"nature_program": SubResource("Animation_dqfto"),
+&"off": SubResource("Animation_5dxy3"),
+&"ox_news_intro": SubResource("Animation_toot0"),
+&"ox_news_logo": SubResource("Animation_sc14b"),
+&"static": SubResource("Animation_pl8m6")
+}
+
+[sub_resource type="Curve3D" id="Curve3D_c2vyd"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.5, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_c2vyd"]
+resource_name = "test_ox_news"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"static"],
+"method": &"change_animation"
+}, {
+"args": [&"ox_news_logo"],
+"method": &"change_animation"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q8bw3"]
+_data = {
+&"test_ox_news": SubResource("Animation_c2vyd")
+}
+
+[node name="Television" type="Node3D"]
+script = ExtResource("1_dqfto")
+
+[node name="TvMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.40866792, 0)
+mesh = ExtResource("8_dwbim")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5dxy3")
+}
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(-4.1786436e-08, 0.29348978, -0.95596224, 1.28288455e-08, 0.95596224, 0.29348978, 1, 0, -4.371139e-08, -0.23723543, 0.6127099, 0)
+light_energy = 0.0
+spot_range = 3.4062412
+spot_angle = 52.708958
+
+[node name="ThoughtPath" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.091697395)
+curve = SubResource("Curve3D_c2vyd")
+
+[node name="Thoughts" parent="ThoughtPath" instance=ExtResource("9_pl8m6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+progress = 1.5
+current_thought_progress_ratio = 1.0
+
+[node name="CutscenePlayer" parent="." node_paths=PackedStringArray("dialogue_bubble") instance=ExtResource("13_c2vyd")]
+libraries = {
+&"": SubResource("AnimationLibrary_q8bw3")
+}
+dialogue_bubble = NodePath("../ThoughtPath/Thoughts")

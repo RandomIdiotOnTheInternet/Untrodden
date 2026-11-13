@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c3nyg1240vocy"]
+
+[ext_resource type="Script" uid="uid://dw5hvp5758yqt" path="res://scripts/tool/wandering_person_area.gd" id="1_b1elc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_flq4q"]
+size = Vector3(1, 3, 5)
+
+[node name="WanderingNodeArea" type="Area3D" unique_id=691870178]
+collision_layer = 0
+collision_mask = 32
+monitorable = false
+script = ExtResource("1_b1elc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1990081341]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_flq4q")
+
+[connection signal="area_entered" from="." to="." method="_on_person_entered_area"]

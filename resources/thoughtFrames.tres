@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://4r56cf0lt7dn"]
+
+[ext_resource type="Texture2D" uid="uid://bfd56r6u2e08p" path="res://assets/images/ThoughtBubble.png" id="1_hh32w"]
+[ext_resource type="Texture2D" uid="uid://b403udkgkg76i" path="res://assets/images/ThoughtBubble2.png" id="2_r5er5"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hh32w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_r5er5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]

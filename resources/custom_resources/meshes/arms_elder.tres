@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="BodyMeshLibrary" format=3 uid="uid://b1qfcsun3lwlk"]
+
+[ext_resource type="MeshLibrary" uid="uid://cxkuf8aada71n" path="res://vox/people/arms/arm_elder.vox" id="1_30e6x"]
+[ext_resource type="Script" uid="uid://bq78578v07lol" path="res://scripts/tool/body_mesh_library.gd" id="1_vd1l7"]
+
+[resource]
+script = ExtResource("1_vd1l7")
+libraries = Array[MeshLibrary]([ExtResource("1_30e6x")])
+metadata/_custom_type_script = "uid://bq78578v07lol"

@@ -1,0 +1,11 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://bl16vp5eujr2e"]
+
+[ext_resource type="AudioStream" uid="uid://crdlubdd00ndd" path="res://sounds/music/Too Hard To Bear.mp3" id="1_7kide"]
+[ext_resource type="AudioStream" uid="uid://dna61u4q4qq68" path="res://sounds/Society's Lament.mp3" id="2_86f1u"]
+[ext_resource type="AudioStream" uid="uid://c7r0nol53i5qf" path="res://sounds/music/Hollow In The High-Rise.mp3" id="3_xdsk5"]
+
+[resource]
+streams_count = 3
+stream_0/stream = ExtResource("1_7kide")
+stream_1/stream = ExtResource("2_86f1u")
+stream_2/stream = ExtResource("3_xdsk5")

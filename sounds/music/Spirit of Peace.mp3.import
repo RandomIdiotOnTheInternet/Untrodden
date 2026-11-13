@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dw1smx7xby6lt"
+path="res://.godot/imported/Spirit of Peace.mp3-d36c0b97bb3b912cffc24ee25718c277.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/Spirit of Peace.mp3"
+dest_files=["res://.godot/imported/Spirit of Peace.mp3-d36c0b97bb3b912cffc24ee25718c277.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

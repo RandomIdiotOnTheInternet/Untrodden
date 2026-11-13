@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://d6fj8gnyl6mc"]
+
+[ext_resource type="ArrayMesh" uid="uid://cp20myh668hwg" path="res://vox/House.vox" id="1_4ud1w"]
+[ext_resource type="Material" uid="uid://bhro56dfhfjk4" path="res://resources/materials/rocky_material.tres" id="1_em46u"]
+[ext_resource type="ArrayMesh" uid="uid://crp6h274cv42v" path="res://vox/theWearyWorm.vox" id="2_bbldr"]
+[ext_resource type="PackedScene" uid="uid://gt2ug82ek4us" path="res://scenes/player/main_character.tscn" id="3_qhd33"]
+[ext_resource type="ArrayMesh" uid="uid://bun30f10h70py" path="res://vox/fattiesFoodPlace.vox" id="3_vwbsc"]
+[ext_resource type="Sky" uid="uid://dkroo2pp7qom" path="res://ambientcg/environments/DaySkyHDRI063B_1K.tres" id="4_1aw3b"]
+[ext_resource type="PackedScene" uid="uid://ddsthje72cbdv" path="res://scenes/tool/story_point.tscn" id="4_vwbsc"]
+[ext_resource type="Resource" uid="uid://stt73cnowsct" path="res://resources/custom_resources/story/test_point.tres" id="5_tcixy"]
+[ext_resource type="Resource" uid="uid://2kf0r3geg0p1" path="res://scenes/world/Interior/test_point_aditional_action.tres" id="6_6bekk"]
+[ext_resource type="Script" uid="uid://bchmrinehxpk5" path="res://resources/custom_resources/story_action.gd" id="7_b2n27"]
+[ext_resource type="PackedScene" uid="uid://bgv22ffbcyt48" path="res://scenes/characters/person.tscn" id="8_bbldr"]
+[ext_resource type="PackedScene" uid="uid://bbjymevbmimvw" path="res://scenes/furntiture/streetlight.tscn" id="10_vwbsc"]
+[ext_resource type="PackedScene" uid="uid://3k7wrey2qf4g" path="res://scenes/characters/cash_register.tscn" id="14_em46u"]
+[ext_resource type="PackedScene" uid="uid://dw2i0vkqcdu47" path="res://scenes/tool/interaction_point.tscn" id="14_h6k38"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_i4smv"]
+material = ExtResource("1_em46u")
+size = Vector3(30, 1, 10)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i4smv"]
+points = PackedVector3Array(-5, -0.5, -5, -5, 0.5, -5, 5, -0.5, -5, -5, -0.5, 5, -5, 0.5, 5, 5, 0.5, -5, 5, -0.5, 5, 5, 0.5, 5)
+
+[sub_resource type="Environment" id="Environment_ptawe"]
+background_mode = 2
+sky = ExtResource("4_1aw3b")
+glow_enabled = true
+glow_intensity = 2.0
+glow_bloom = 0.05
+fog_enabled = true
+fog_light_color = Color(0.3665763, 0.39809522, 0.4471323, 1)
+
+[sub_resource type="Resource" id="Resource_4ud1w"]
+script = ExtResource("7_b2n27")
+actionType = 7
+modifiers = ["cutscene_test_2"]
+metadata/_custom_type_script = "uid://bchmrinehxpk5"
+
+[sub_resource type="Resource" id="Resource_7ptfv"]
+script = ExtResource("7_b2n27")
+actionType = 3
+modifiers = ["Bye! See you later!", 3]
+metadata/_custom_type_script = "uid://bchmrinehxpk5"
+
+[sub_resource type="Resource" id="Resource_bbldr"]
+script = ExtResource("7_b2n27")
+actionType = 1
+modifiers = [0]
+metadata/_custom_type_script = "uid://bchmrinehxpk5"
+
+[sub_resource type="Resource" id="Resource_vwbsc"]
+script = ExtResource("7_b2n27")
+actionType = 7
+modifiers = ["cutscene_test"]
+metadata/_custom_type_script = "uid://bchmrinehxpk5"
+
+[node name="House" type="Node3D" unique_id=1723873387]
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=1695429881]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1767270093]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3400652, 0)
+mesh = SubResource("BoxMesh_i4smv")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1356236496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3400652, 0)
+shape = SubResource("ConvexPolygonShape3D_i4smv")
+
+[node name="EldersHouse" type="MeshInstance3D" parent="Ground" unique_id=1987861756]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -0.8400651, -1.9881446)
+mesh = ExtResource("1_4ud1w")
+
+[node name="TheWearyWorm" type="MeshInstance3D" parent="Ground" unique_id=1939236846]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.1917033, -0.84006524, -2.0473435)
+mesh = ExtResource("2_bbldr")
+
+[node name="FattiesFoodPlace" type="MeshInstance3D" parent="Ground" unique_id=630483058]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.1734228, -0.8400651, -1.8672775)
+mesh = ExtResource("3_vwbsc")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1395970070]
+environment = SubResource("Environment_ptawe")
+
+[node name="DemonSpawnTimer" type="Timer" parent="." unique_id=231926483]
+autostart = true
+
+[node name="MainCharacter" parent="." unique_id=1271425144 instance=ExtResource("3_qhd33")]
+transform = Transform3D(0.9999995, 0.000736949, -0.00056394667, -0.0007372839, 0.9999995, -0.00062155933, 0.00056350883, 0.0006219563, 0.99999964, 0.008497387, -0.8400649, 0.00031208992)
+
+[node name="StoryPoint" parent="." unique_id=931737180 instance=ExtResource("4_vwbsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5546541, 0, 0)
+this_story_action = ExtResource("5_tcixy")
+
+[node name="StoryPoint2" parent="." unique_id=1485984556 instance=ExtResource("4_vwbsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9554446, 0, 0)
+this_story_action = ExtResource("6_6bekk")
+
+[node name="StoryPoint3" parent="." unique_id=1507947548 instance=ExtResource("4_vwbsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.214551, 0, 0)
+this_story_action = SubResource("Resource_4ud1w")
+
+[node name="StoryPoint4" parent="." unique_id=175928567 instance=ExtResource("4_vwbsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+this_story_action = SubResource("Resource_7ptfv")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1881425268]
+transform = Transform3D(0.8660254, -0.4829629, -0.12940954, 0, -0.25881907, 0.9659258, -0.5, -0.83651626, -0.22414389, 0, 4, 0)
+shadow_enabled = true
+shadow_blur = 0.2
+
+[node name="StoryPoint5" parent="." unique_id=473663510 instance=ExtResource("4_vwbsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.863781, 0, 0)
+this_story_action = SubResource("Resource_bbldr")
+cutscene_only = true
+
+[node name="Person" parent="." unique_id=1676738155 instance=ExtResource("8_bbldr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.644, -0.865, -0.25)
+current_state = "Waiting"
+my_cutscene = SubResource("Resource_vwbsc")
+door_destination = &"test_house"
+
+[node name="Streetlight" parent="." unique_id=20591394 instance=ExtResource("10_vwbsc")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.2365065, -0.14518791, -0.43597078)
+on = true
+
+[node name="Streetlight2" parent="." unique_id=2137088574 instance=ExtResource("10_vwbsc")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.4091864, -0.14518791, -0.43597078)
+on = true
+flickering = true
+
+[node name="Person2" parent="." unique_id=684790353 instance=ExtResource("8_bbldr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.83940125, 1)
+current_state = "Walking"
+z_position_level = 1.5
+
+[node name="CashRegister" parent="." unique_id=316028788 instance=ExtResource("14_em46u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2660685, -0.86177677, -0.27266282)
+
+[node name="InteractionPoint" parent="." unique_id=943169738 instance=ExtResource("14_h6k38")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2393174, -0.05355832, 0)
+interaction_details = "Enter 'Fattie's Diner'"
+interaction_id = &"day_1/enter_fatties"

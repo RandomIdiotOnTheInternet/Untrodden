@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="SaveFile" format=3]
+
+[ext_resource type="Script" path="res://scripts/UI/BmailData.gd" id="1_aa8qq"]
+[ext_resource type="Script" path="res://scripts/tool/SaveFile.gd" id="1_yp180"]
+[ext_resource type="Resource" path="res://resources/custom_resources/story/bmails/Day 1/bmail_rage.tres" id="2_4cy2j"]
+[ext_resource type="Script" path="res://scripts/tool/DateTime.gd" id="2_cyphb"]
+[ext_resource type="Script" path="res://scripts/tool/cutscene.gd" id="3_aa8qq"]
+
+[sub_resource type="Resource" id="Resource_hippb"]
+script = ExtResource("3_aa8qq")
+cutscene_id = &"demo"
+metadata/_custom_type_script = "uid://dmn52hjovsovi"
+
+[sub_resource type="Resource" id="Resource_6r3f0"]
+script = ExtResource("2_cyphb")
+hour = 8
+minute = 43
+second = 59
+
+[resource]
+script = ExtResource("1_yp180")
+world_time = SubResource("Resource_6r3f0")
+energy = 120
+money = 40000000
+current_scene = &"res://scenes/UI/dialogue_void.tscn"
+current_cutscene = SubResource("Resource_hippb")
+current_bmails = Array[ExtResource("1_aa8qq")]([ExtResource("2_4cy2j")])

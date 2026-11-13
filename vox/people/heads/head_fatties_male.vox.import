@@ -1,0 +1,17 @@
+[remap]
+
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
+uid="uid://dhhg1e2embvsa"
+path="res://.godot/imported/head_fatties_male.vox-5631c5873c469ad3c829209c81b0a31b.meshlib"
+
+[deps]
+
+source_file="res://vox/people/heads/head_fatties_male.vox"
+dest_files=["res://.godot/imported/head_fatties_male.vox-5631c5873c469ad3c829209c81b0a31b.meshlib"]
+
+[params]
+
+Scale=0.1
+GreedyMeshGenerator=true
+SnapToGround=false

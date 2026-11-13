@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Cutscene" format=3 uid="uid://8k7k5kpwangx"]
+
+[ext_resource type="Script" uid="uid://dmn52hjovsovi" path="res://scripts/tool/cutscene.gd" id="1_lrbdf"]
+
+[resource]
+script = ExtResource("1_lrbdf")
+cutscene_id = &"bmail_reply"
+metadata/_custom_type_script = "uid://dmn52hjovsovi"

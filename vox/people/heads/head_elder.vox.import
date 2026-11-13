@@ -1,0 +1,17 @@
+[remap]
+
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
+uid="uid://b030byxrb1mj"
+path="res://.godot/imported/head_elder.vox-9c31107b4d8bc343234f4f917f0fffa9.meshlib"
+
+[deps]
+
+source_file="res://vox/people/heads/head_elder.vox"
+dest_files=["res://.godot/imported/head_elder.vox-9c31107b4d8bc343234f4f917f0fffa9.meshlib"]
+
+[params]
+
+Scale=0.1
+GreedyMeshGenerator=true
+SnapToGround=false

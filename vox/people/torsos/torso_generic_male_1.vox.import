@@ -1,0 +1,17 @@
+[remap]
+
+importer="MagicaVoxel.With.Extensions.To.MeshLibrary"
+type="MeshLibrary"
+uid="uid://b7qjmx758e72e"
+path="res://.godot/imported/torso_generic_male_1.vox-acb632181a570a8ffb94d2c15ae81633.meshlib"
+
+[deps]
+
+source_file="res://vox/people/torsos/torso_generic_male_1.vox"
+dest_files=["res://.godot/imported/torso_generic_male_1.vox-acb632181a570a8ffb94d2c15ae81633.meshlib"]
+
+[params]
+
+Scale=0.1
+GreedyMeshGenerator=true
+SnapToGround=false

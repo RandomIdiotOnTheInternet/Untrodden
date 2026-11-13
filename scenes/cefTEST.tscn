@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://1beca1o8yeao"]
+
+[ext_resource type="Script" uid="uid://cnikdhhyt7o83" path="res://scripts/UI/internet_bridge.gd" id="3_shl85"]
+
+[node name="Control" type="Control" unique_id=563216192]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InternetBridge" type="CefTexture" parent="." unique_id=1813044129]
+url = "https://www.google.com/"
+custom_minimum_size = Vector2(0, 567)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.046296295
+anchor_right = 1.0
+anchor_bottom = 0.9212963
+offset_transform_position = Vector2(0, 100)
+script = ExtResource("3_shl85")
+metadata/_edit_use_anchors_ = true
+
+[node name="BmailLockScreen" type="Button" parent="." unique_id=592184128]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -134.0
+offset_bottom = -99.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Return"
+
+[connection signal="cookies_received" from="InternetBridge" to="InternetBridge" method="_on_cookies_received"]
+[connection signal="url_changed" from="InternetBridge" to="InternetBridge" method="_on_url_changed"]
+[connection signal="pressed" from="BmailLockScreen" to="InternetBridge" method="_on_return_button_pressed"]
