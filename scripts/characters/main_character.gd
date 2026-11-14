@@ -48,6 +48,7 @@ func change_state(story_action : StoryAction):
 			rotate_mesh(Vector3(0, 90 * current_direction, 0), false)
 			$Audio/Footsteps.activate()
 		STATE.Waiting:
+			velocity = Vector3.ZERO
 			current_state = new_state
 			
 			character_mesh.set_walking(false)
@@ -55,8 +56,7 @@ func change_state(story_action : StoryAction):
 			
 			# A value of 0 just makes you wait indefinatly (used in cutscenes)
 			if waitTime > 0:
-				$WaitingTimer.start(waitTime)
-				await $WaitingTimer.timeout
+				await get_tree().create_timer(waitTime).timeout
 			if next_action: change_state(next_action)
 		STATE.Running:
 			current_state = new_state
@@ -85,14 +85,14 @@ func change_state(story_action : StoryAction):
 
 func _process(delta):
 	match current_state:
-			STATE.Waiting:
-				velocity = velocity / 2
-			STATE.Walking:
-				walk(delta, 1)
-			STATE.Running:
-				walk(delta, 2)
-			STATE.EnterDoor:
-				walk(delta, 1)
+		STATE.Waiting:
+			pass
+		STATE.Walking:
+			walk(delta, 1)
+		STATE.Running:
+			walk(delta, 2)
+		STATE.EnterDoor:
+			walk(delta, 1)
 	
 	move_and_slide()
 	
@@ -100,13 +100,13 @@ func _process(delta):
 		## These "just pressed" checks are for state changes, so we don't have to do them every frame.
 		if Input.is_action_just_pressed("left"):
 			var walking_action = StoryAction.new()
-			walking_action.modifiers.append(-1)
+			walking_action.modifiers[0] = -1
 			walking_action.actionType = STATE.Walking
 			change_state(walking_action)
 			
 		if Input.is_action_just_pressed("right"):
 			var walking_action = StoryAction.new()
-			walking_action.modifiers.append(1)
+			walking_action.modifiers[0] = 1
 			walking_action.actionType = STATE.Walking
 			change_state(walking_action)
 		

@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://ceynurgto8a07" path="res://sounds/sfx/walking_sounds.tres" id="7_woqqa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rgnvv"]
-size = Vector3(0.26293945, 1.5594482, 0.21508789)
+size = Vector3(0.26293945, 0.90689087, 0.21508789)
 
 [sub_resource type="Animation" id="Animation_52hat"]
 resource_name = "enter_door"
@@ -24,7 +24,7 @@ collision_layer = 97
 script = ExtResource("1_1tx58")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=911819295]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0032958984, 0.7202759, 0.010131836)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0032958984, 0.3939972, 0.010131836)
 shape = SubResource("BoxShape3D_rgnvv")
 
 [node name="CharacterMesh" parent="." unique_id=777946477 instance=ExtResource("6_woqqa")]

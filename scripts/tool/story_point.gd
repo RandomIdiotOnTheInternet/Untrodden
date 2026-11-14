@@ -7,6 +7,10 @@ extends Node3D
 @export var temporary = true
 @export var npc_point = false
 
+func _ready():
+	if !Global.debug:
+		$DebugMesh.hide() # On game release - just destory the mesh
+
 func _on_person_entered(body):
 	
 	if cutscene_only && (Global.current_gamestate != Global.GAMESTATE.InCutscene):

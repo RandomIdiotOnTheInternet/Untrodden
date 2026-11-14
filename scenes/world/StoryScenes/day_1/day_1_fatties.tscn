@@ -295,11 +295,6 @@ actionType = 1
 modifiers = [1]
 metadata/_custom_type_script = "uid://bchmrinehxpk5"
 
-[sub_resource type="Resource" id="Resource_705dq"]
-script = ExtResource("7_fx82s")
-actionType = null
-metadata/_custom_type_script = "uid://bchmrinehxpk5"
-
 [node name="Fatties" type="Node3D" unique_id=1555675484]
 
 [node name="Fatty Model" parent="." unique_id=1964657524 instance=ExtResource("1_1eyto")]
@@ -322,7 +317,6 @@ libraries/ = SubResource("AnimationLibrary_epw8f")
 
 [node name="Person" parent="." unique_id=1758508300 instance=ExtResource("3_0m3gm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.25, -0.5)
-current_state = "Waiting"
 
 [node name="CashRegister" parent="." unique_id=316028788 node_paths=PackedStringArray("cutscene_player") instance=ExtResource("4_rss1d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3399391, 0.6718408, -0.14728226)
@@ -344,8 +338,6 @@ cutscene_only = true
 
 [node name="Rando1" parent="." unique_id=1451792475 instance=ExtResource("3_0m3gm")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.75730896, 0.30944794, 0.9891957)
-current_state = "Waiting"
-current_stat = SubResource("Resource_705dq")
 
 [connection signal="dialogue_finished" from="CashRegister/CutscenePlayer" to="CashRegister" method="_on_cutscene_player_dialogue_finished"]
 [connection signal="dialogue_started" from="CashRegister/CutscenePlayer" to="CashRegister" method="_on_cutscene_player_dialogue_started"]

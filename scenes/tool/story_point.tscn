@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://m8owokgxf35w" path="res://scripts/tool/story_point.gd" id="1_j1eyj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cmguu"]
-size = Vector3(0.1, 25, 0.5)
+size = Vector3(0.5, 25, 0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j1eyj"]
 transparency = 1
@@ -12,7 +12,7 @@ albedo_color = Color(1, 1, 1, 0.039215688)
 
 [sub_resource type="BoxMesh" id="BoxMesh_j1eyj"]
 material = SubResource("StandardMaterial3D_j1eyj")
-size = Vector3(0.1, 1, 0.5)
+size = Vector3(0.5, 1, 0.5)
 
 [node name="StoryPoint" type="Node3D" unique_id=476974275]
 script = ExtResource("1_j1eyj")
@@ -20,14 +20,14 @@ script = ExtResource("1_j1eyj")
 [node name="CollisionArea" type="Area3D" parent="." unique_id=1806715571]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.8568301, 0)
 collision_layer = 0
-collision_mask = 384
+collision_mask = 448
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionArea" unique_id=1992578740]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.5, 0)
 shape = SubResource("BoxShape3D_cmguu")
 debug_color = Color(0, 0.5950001, 0.7, 0.7411765)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2050527108]
+[node name="DebugMesh" type="MeshInstance3D" parent="." unique_id=2050527108]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0780637, 0)
 mesh = SubResource("BoxMesh_j1eyj")
 

@@ -12,7 +12,7 @@
 [ext_resource type="Resource" uid="uid://bxdekfkn5bdqx" path="res://resources/custom_resources/meshes/torsos_george.tres" id="17_yhm0h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_55fil"]
-size = Vector3(0.26293945, 1.5594482, 0.21508789)
+size = Vector3(0.26293945, 0.9149475, 0.21508789)
 
 [sub_resource type="Animation" id="Animation_a25yj"]
 length = 0.001
@@ -135,7 +135,7 @@ collision_mask = 257
 script = ExtResource("1_cdeow")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1147796948]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0032958984, 0.7202759, 0.010131836)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0032958984, 0.3980255, 0.010131836)
 shape = SubResource("BoxShape3D_55fil")
 
 [node name="CharacterMesh" parent="." unique_id=777946477 instance=ExtResource("12_j33pw")]
@@ -147,7 +147,7 @@ torso_libraries = ExtResource("17_yhm0h")
 [node name="PlayerUI" parent="." unique_id=116777726 instance=ExtResource("6_b8ocx")]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=460752421]
-transform = Transform3D(0.8660254, -0.25, 0.4330127, 0, 0.8660254, 0.5, -0.5, -0.4330127, 0.75, 1.4209402, 2.5432646, 2.6269987)
+transform = Transform3D(0.8660254, -0.25, 0.4330127, 0, 0.8660254, 0.5, -0.5, -0.4330127, 0.75, 1.5, 2.5, 2.5)
 projection = 1
 current = true
 size = 4.0
