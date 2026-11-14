@@ -124,7 +124,9 @@ func new_dialogue(dialogue : Dialogue, swap_focus : bool = true):
 	if len(dialogue.text) > 0: # Empty dialogues are skipped
 		emit_signal("dialogue_started")
 		cutscene_pause()
-		if dialogue.horizontal_alignment == -1:
+		
+		# This is for default alignment
+		if dialogue.horizontal_alignment == -1 and Global.player_ui.text_box.horizontal_alignment == -1:
 			if is_in_group("player"):
 				dialogue.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 			else:

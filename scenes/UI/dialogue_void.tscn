@@ -19,18 +19,16 @@ metadata/_custom_type_script = "uid://c1irdit10ydy4"
 [sub_resource type="Resource" id="Resource_e71ev"]
 script = ExtResource("4_rmox7")
 text = "[color=dark_gray]You don't see the trees. The cars. The people passing by."
-horizontal_alignment = 1
 metadata/_custom_type_script = "uid://c1irdit10ydy4"
 
 [sub_resource type="Resource" id="Resource_bg36n"]
 script = ExtResource("4_rmox7")
 text = "[color=dark_gray]Doing such isn't profitable, nor is it fashionable. Why should you?[/color]"
-horizontal_alignment = 1
 metadata/_custom_type_script = "uid://c1irdit10ydy4"
 
 [sub_resource type="Resource" id="Resource_rmox7"]
 script = ExtResource("4_rmox7")
-text = "[color=dark_gray]Only one though prevails in your mind:[/color]"
+text = "[color=dark_gray]Only one thought prevails in your mind:[/color]"
 horizontal_alignment = 1
 metadata/_custom_type_script = "uid://c1irdit10ydy4"
 

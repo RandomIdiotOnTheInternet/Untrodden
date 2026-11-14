@@ -11,7 +11,6 @@ signal dialogue_started()
 # These are for sotring and playing the text sounds for the respective characters
 # in a dialogue.
 var horizontal_alignment : int = 0
-
 var text_sound_left : AudioStream
 var text_sound_right : AudioStream
 var text_sound_center : AudioStream
@@ -40,8 +39,6 @@ func new_dialogue(dialogue : Dialogue):
 			if dialogue.text_sound:
 				text_sound_center = dialogue.text_sound
 			dialogue_text.stream = text_sound_center
-		_:
-			print("Hmm... text_box got " + str(dialogue.horizontal_alignment) + " as an alignment...")
 	
 	if dialogue.left_portrait:
 		change_portrait(dialogue.left_portrait, HORIZONTAL_ALIGNMENT_LEFT)
